@@ -3,28 +3,23 @@ import { useState } from 'react';
 import PropTypes from 'prop-types';
 
 const ItemCard = ({ id, back, isShowed, changeCard }) => {
-  const [isPushed, setIsPushed] = useState(() => {
-    return isShowed;
-  });
   const [showValueBack, setShowValueBack] = useState(false);
 
   const showBack = () => {
-    if (isPushed) {
+    if (isShowed) {
       return;
-    } else {
-      setIsPushed(!isPushed);
-      changeCard(id);
-      setTimeout(() => {
-        setShowValueBack(true);
-      }, 1000);
     }
+    changeCard(id);
+    setTimeout(() => {
+      setShowValueBack(true);
+    }, 100);
   };
 
-  const classes = isPushed ? `${css.item} ${css.rotatedItem}` : `${css.item}`;
+  const classes = isShowed ? `${css.item} ${css.rotatedItem}` : `${css.item}`;
 
   return (
     <li className={classes} onClick={showBack}>
-      <p>{showValueBack ? back : ''}</p>
+      <p className={css.back}>{showValueBack && isShowed ? back : ''}</p>
     </li>
   );
 };

@@ -17,8 +17,19 @@ const cardsFromBackend = [
 
 const CardPage = () => {
   const [cards, setCards] = useState(cardsFromBackend);
+  const [gameOver, setGameOver] = useState('');
 
   const changeCard = id => {
+    const quantityShowedCards = cards.filter(card => card.isShowed === true);
+
+    if (quantityShowedCards.length > 2) {
+      return;
+    }
+
+    if (quantityShowedCards.length > 1) {
+      setGameOver('Game Over');
+    }
+
     const cardsAfterSelect = cards.map(card => {
       if (card._id === id) {
         return { ...card, isShowed: true };
@@ -44,6 +55,7 @@ const CardPage = () => {
             />
           ))}
         </ul>
+        {gameOver ? <p className={css.gameOver}>{gameOver}</p> : ''}
       </div>
     </div>
   );
