@@ -1,0 +1,10 @@
+.select {
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.label {
+  font-size: 16px;
+  font-weight: 600;
+  color: darkgreen;
+}
