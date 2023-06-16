@@ -29,7 +29,8 @@
   text-align: center;
 }
 
-.gameOver {
+.gameOver,
+.totalScore {
   color: blue;
   text-align: center;
 }

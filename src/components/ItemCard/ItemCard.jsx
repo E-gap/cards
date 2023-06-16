@@ -2,24 +2,25 @@ import css from './ItemCard.module.css';
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 
-const ItemCard = ({ id, back, isShowed, changeCard }) => {
-  const [showValueBack, setShowValueBack] = useState(false);
+const ItemCard = ({ id, score, isShowed, changeCard, changeScore }) => {
+  const [showValueScore, setShowValueScore] = useState(false);
 
-  const showBack = () => {
+  const showScore = () => {
     if (isShowed) {
       return;
     }
     changeCard(id);
+    changeScore(score);
     setTimeout(() => {
-      setShowValueBack(true);
+      setShowValueScore(true);
     }, 100);
   };
 
   const classes = isShowed ? `${css.item} ${css.rotatedItem}` : `${css.item}`;
 
   return (
-    <li className={classes} onClick={showBack}>
-      <p className={css.back}>{showValueBack && isShowed ? back : ''}</p>
+    <li className={classes} onClick={showScore}>
+      <p className={css.score}>{showValueScore && isShowed ? score : ''}</p>
     </li>
   );
 };
@@ -28,7 +29,8 @@ export default ItemCard;
 
 ItemCard.propTypes = {
   id: PropTypes.number.isRequired,
-  back: PropTypes.number.isRequired,
+  score: PropTypes.number.isRequired,
   isShowed: PropTypes.bool.isRequired,
   changeCard: PropTypes.func.isRequired,
+  changeScore: PropTypes.func.isRequired,
 };
