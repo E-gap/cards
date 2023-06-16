@@ -1,6 +1,6 @@
 import css from './CardPage.module.css';
 import ItemCard from '../../components/ItemCard/ItemCard';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const cardsFromBackend = [
   { _id: 1, back: 10, isShowed: false },
@@ -16,42 +16,52 @@ const cardsFromBackend = [
 ];
 
 const CardPage = () => {
-  const [cards, setCards] = useState(cardsFromBackend);
+  const [cards, setCards] = useState(() => {
+    const ttt = cardsFromBackend.sort(() => Math.random() - 0.5);
+    return ttt;
+  });
   const [gameOver, setGameOver] = useState('');
+  const [id, setId] = useState('');
 
-  const changeCard = id => {
-    const quantityShowedCards = cards.filter(card => card.isShowed === true);
+  useEffect(() => {
+    const changeCard = id => {
+      const quantityShowedCards = cards.filter(card => card.isShowed === true);
 
-    if (quantityShowedCards.length > 2) {
-      return;
-    }
-
-    if (quantityShowedCards.length > 1) {
-      setGameOver('Game Over');
-    }
-
-    const cardsAfterSelect = cards.map(card => {
-      if (card._id === id) {
-        return { ...card, isShowed: true };
-      } else {
-        return card;
+      if (quantityShowedCards.length >= 3) {
+        return;
       }
-    });
 
-    setCards(cardsAfterSelect);
-  };
+      if (quantityShowedCards.length >= 2) {
+        setGameOver('Game Over');
+      }
+
+      const cardsAfterSelect = cards.map((card, index) => {
+        if (index === id) {
+          return { ...card, isShowed: true };
+        } else {
+          return card;
+        }
+      });
+
+      setCards(cardsAfterSelect);
+    };
+
+    changeCard(id);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [id]);
 
   return (
     <div className={css.cardPage}>
       <div className={css.container}>
         <ul className={css.cardList}>
-          {cards.map(card => (
+          {cards.map((card, index) => (
             <ItemCard
-              key={card._id}
-              id={card._id}
+              // key=index because every time we start game, we shuffled array of cards
+              key={index}
+              id={index}
               back={card.back}
               isShowed={card.isShowed}
-              changeCard={changeCard}
+              changeCard={setId}
             />
           ))}
         </ul>
