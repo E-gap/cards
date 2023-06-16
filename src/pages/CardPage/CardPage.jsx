@@ -13,6 +13,8 @@ const cardsFromBackend = [
   { _id: 8, score: 80, isShowed: false },
   { _id: 9, score: 90, isShowed: false },
   { _id: 10, score: 100, isShowed: false },
+  { _id: 11, score: 110, isShowed: false },
+  { _id: 12, score: 120, isShowed: false },
 ];
 
 const CardPage = () => {
@@ -60,6 +62,15 @@ const CardPage = () => {
   return (
     <div className={css.cardPage}>
       <div className={css.container}>
+        <button
+          type="button"
+          className={css.buttonNewGame}
+          onClick={() => {
+            window.location.reload();
+          }}
+        >
+          Start New Game
+        </button>
         <ul className={css.cardList}>
           {cards.map((card, index) => (
             <ItemCard
@@ -75,15 +86,6 @@ const CardPage = () => {
         </ul>
         <p className={css.totalScore}>Your score {totalScore}</p>
         {gameOver ? <p className={css.gameOver}>{gameOver}</p> : ''}
-        <button
-          type="button"
-          className={css.buttonNewGame}
-          onClick={() => {
-            window.location.reload();
-          }}
-        >
-          Start New Game
-        </button>
       </div>
     </div>
   );
