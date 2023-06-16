@@ -71,6 +71,7 @@ const CardPage = () => {
         >
           Start New Game
         </button>
+        <p className={css.totalScore}>Your score {totalScore}</p>
         <ul className={css.cardList}>
           {cards.map((card, index) => (
             <ItemCard
@@ -84,7 +85,7 @@ const CardPage = () => {
             />
           ))}
         </ul>
-        <p className={css.totalScore}>Your score {totalScore}</p>
+
         {gameOver ? <p className={css.gameOver}>{gameOver}</p> : ''}
       </div>
     </div>
