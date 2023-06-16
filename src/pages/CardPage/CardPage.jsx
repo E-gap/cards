@@ -75,6 +75,15 @@ const CardPage = () => {
         </ul>
         <p className={css.totalScore}>Your score {totalScore}</p>
         {gameOver ? <p className={css.gameOver}>{gameOver}</p> : ''}
+        <button
+          type="button"
+          className={css.buttonNewGame}
+          onClick={() => {
+            window.location.reload();
+          }}
+        >
+          Start New Game
+        </button>
       </div>
     </div>
   );
