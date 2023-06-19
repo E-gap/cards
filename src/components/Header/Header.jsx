@@ -1,10 +1,8 @@
+import PropTypes from 'prop-types';
 import css from './Header.module.css';
 import Button from '../Button/Button';
 
-const Header = () => {
-  const handleHeaderButton = e => {
-    console.log(e.target);
-  };
+const Header = ({ handleHeaderButton }) => {
   return (
     <header className={css.header}>
       <Button text="Sign In" handleButton={handleHeaderButton} view="signIn" />
@@ -14,3 +12,7 @@ const Header = () => {
 };
 
 export default Header;
+
+Header.propTypes = {
+  handleHeaderButton: PropTypes.func.isRequired,
+};

@@ -4,8 +4,6 @@ import css from './Button.module.css';
 const Button = ({ text, handleButton, view }) => {
   let style;
 
-  console.log(view);
-
   switch (view) {
     case 'buttonNewGame':
       style = css.buttonNewGame;

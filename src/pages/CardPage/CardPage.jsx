@@ -2,6 +2,7 @@ import css from './CardPage.module.css';
 import ItemCard from '../../components/ItemCard/ItemCard';
 import Button from '../../components/Button/Button';
 import Header from '../../components/Header/Header';
+import ModalWindow from '../../components/ModalWindow/ModalWindow';
 import { useState, useEffect } from 'react';
 
 const cardsFromBackend = [
@@ -27,6 +28,7 @@ const CardPage = () => {
   const [gameOver, setGameOver] = useState('');
   const [id, setId] = useState('');
   const [totalScore, setTotalScore] = useState(0);
+  const [isModalWindowOpen, setIsModalWindowOpen] = useState(false);
 
   useEffect(() => {
     const changeCard = id => {
@@ -65,10 +67,21 @@ const CardPage = () => {
     window.location.reload();
   };
 
+  const onKeyDown = e => {
+    if (e.code === 'Escape') {
+      setIsModalWindowOpen(false);
+    }
+  };
+
+  const handleHeaderButton = e => {
+    setIsModalWindowOpen(true);
+  };
+
   return (
     <div className={css.cardPage}>
       <div className={css.container}>
-        <Header />
+        {isModalWindowOpen ? <ModalWindow onKeyDown={onKeyDown} /> : ''}
+        <Header handleHeaderButton={handleHeaderButton} />
         <Button
           text="Start New Game"
           handleButton={reloadPage}
