@@ -11,4 +11,22 @@
   flex-direction: column;
   width: 100%;
   margin-bottom: 10px;
+  border: 1px solid red;
+  position: relative;
+}
+
+.submit {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.buttonHide {
+  position: absolute;
+  top: 24px;
+  right: 5px;
+}
+
+.buttonHide:hover {
+  cursor: pointer;
 }
