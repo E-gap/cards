@@ -4,15 +4,18 @@
   height: 150px;
   transition: 0.1s ease-in-out;
   background-color: aqua;
-  border-radius: 20px;
+  border-radius: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-right: 20px;
   margin-bottom: 20px;
+  background-image: url(../../images/shirt.jpg);
+  background-size: cover;
 }
 
 .rotatedItem {
+  background-image: unset;
   background-color: yellow;
   rotate: 1 2 1 360deg;
 }
