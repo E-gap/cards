@@ -1,0 +1,10 @@
+.header {
+  border: 1px solid green;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: end;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+}

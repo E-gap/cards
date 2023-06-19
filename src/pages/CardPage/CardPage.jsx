@@ -1,5 +1,7 @@
 import css from './CardPage.module.css';
 import ItemCard from '../../components/ItemCard/ItemCard';
+import Button from '../../components/Button/Button';
+import Header from '../../components/Header/Header';
 import { useState, useEffect } from 'react';
 
 const cardsFromBackend = [
@@ -59,22 +61,24 @@ const CardPage = () => {
     } else setTotalScore(totalScore + score);
   };
 
+  const reloadPage = () => {
+    window.location.reload();
+  };
+
   return (
     <div className={css.cardPage}>
       <div className={css.container}>
-        <button
-          type="button"
-          className={css.buttonNewGame}
-          onClick={() => {
-            window.location.reload();
-          }}
-        >
-          Start New Game
-        </button>
+        <Header />
+        <Button
+          text="Start New Game"
+          handleButton={reloadPage}
+          view="buttonNewGame"
+        />
+
         {!gameOver ? (
-          <p className={css.totalScore}>Your current score {totalScore}</p>
+          <p className={css.totalScore}>Your current score: {totalScore}</p>
         ) : (
-          <p>_</p>
+          <p style={{ color: 'palegoldenrod' }}>_</p>
         )}
         <ul className={css.cardList}>
           {cards.map((card, index) => (

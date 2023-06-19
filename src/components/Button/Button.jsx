@@ -1,25 +1,30 @@
 import PropTypes from 'prop-types';
 import css from './Button.module.css';
-import { useNavigate } from 'react-router-dom';
 
-const Button = ({ text, changePage, view }) => {
-  const navigate = useNavigate();
-  const style = view === 'back' ? css.back : css.loadMore;
+const Button = ({ text, handleButton, view }) => {
+  let style;
 
-  const goBack = () => {
-    navigate('/');
-  };
+  console.log(view);
 
-  const handleClick = () => {
-    if (view === 'back') {
-      goBack();
-    } else {
-      changePage();
-    }
-  };
+  switch (view) {
+    case 'buttonNewGame':
+      style = css.buttonNewGame;
+      break;
+
+    case 'signIn':
+      style = css.buttonSignIn;
+      break;
+
+    case 'signUp':
+      style = css.buttonSignUp;
+      break;
+
+    default:
+      style = '';
+  }
 
   return (
-    <button onClick={handleClick} className={style} type="button">
+    <button type="button" className={style} onClick={handleButton}>
       {text}
     </button>
   );
@@ -28,7 +33,7 @@ const Button = ({ text, changePage, view }) => {
 export default Button;
 
 Button.propTypes = {
-  changePage: PropTypes.func,
   text: PropTypes.string.isRequired,
   view: PropTypes.string.isRequired,
+  handleButton: PropTypes.func.isRequired,
 };
