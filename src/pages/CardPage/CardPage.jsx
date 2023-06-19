@@ -29,6 +29,7 @@ const CardPage = () => {
   const [id, setId] = useState('');
   const [totalScore, setTotalScore] = useState(0);
   const [isModalWindowOpen, setIsModalWindowOpen] = useState(false);
+  const [sign, setSign] = useState('');
 
   useEffect(() => {
     const changeCard = id => {
@@ -74,13 +75,22 @@ const CardPage = () => {
   };
 
   const handleHeaderButton = e => {
+    if (e.target.getAttribute('class').includes('Up')) {
+      setSign('signUp');
+    } else if (e.target.getAttribute('class').includes('In')) {
+      setSign('');
+    }
     setIsModalWindowOpen(true);
   };
 
   return (
     <div className={css.cardPage}>
       <div className={css.container}>
-        {isModalWindowOpen ? <ModalWindow onKeyDown={onKeyDown} /> : ''}
+        {isModalWindowOpen ? (
+          <ModalWindow onKeyDown={onKeyDown} sign={sign} />
+        ) : (
+          ''
+        )}
         <Header handleHeaderButton={handleHeaderButton} />
         <Button
           text="Start New Game"

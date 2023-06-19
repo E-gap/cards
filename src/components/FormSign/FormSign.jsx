@@ -3,6 +3,7 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { useState } from 'react';
 import css from './FormSign.module.css';
+import PropTypes from 'prop-types';
 
 import { BiShow } from 'react-icons/bi';
 
@@ -15,7 +16,7 @@ const SignupSchema = Yup.object().shape({
   ),
 });
 
-function FormSign() {
+function FormSign({ sign }) {
   const [typePassword, setTypePassword] = useState('password');
   const [typeConfirmPassword, setTypeConfirmPassword] = useState('password');
 
@@ -65,15 +66,19 @@ function FormSign() {
           <BiShow className={css.buttonHide} onClick={toggleShowPassword} />
           <ErrorMessage name="password" component="div" />
         </label>
-        <label className={css.label}>
-          Confirm password
-          <Field type={typeConfirmPassword} name="confirmPassword" />
-          <BiShow
-            className={css.buttonHide}
-            onClick={toggleShowConfirmPassword}
-          />
-          <ErrorMessage name="confirmPassword" component="div" />
-        </label>
+        {sign ? (
+          <label className={css.label}>
+            Confirm password
+            <Field type={typeConfirmPassword} name="confirmPassword" />
+            <BiShow
+              className={css.buttonHide}
+              onClick={toggleShowConfirmPassword}
+            />
+            <ErrorMessage name="confirmPassword" component="div" />
+          </label>
+        ) : (
+          ''
+        )}
         <button type="submit" className={css.submit}>
           Submit
         </button>
@@ -83,3 +88,7 @@ function FormSign() {
 }
 
 export default FormSign;
+
+FormSign.propTypes = {
+  sign: PropTypes.string,
+};
