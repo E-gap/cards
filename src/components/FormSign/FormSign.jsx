@@ -20,9 +20,15 @@ function FormSign() {
   const [typeConfirmPassword, setTypeConfirmPassword] = useState('password');
 
   const submitForm = (values, actions) => {
-    console.log(values);
-    console.log(actions);
+    //console.log(values);
+    //console.log(actions);
     actions.resetForm();
+    const userData = {
+      email: values.email,
+      password: values.password,
+    };
+
+    console.log(userData);
   };
 
   const toggleShowPassword = () => {
