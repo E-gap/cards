@@ -6,7 +6,7 @@ import FormSign from '../FormSign/FormSign';
 
 const modalRoot = document.querySelector('#modal-root');
 
-function ModalWindow({ onKeyDown, sign }) {
+function ModalWindow({ onKeyDown, closeModal, sign }) {
   useEffect(() => {
     window.addEventListener('keydown', onKeyDown);
     return () => {
@@ -17,7 +17,7 @@ function ModalWindow({ onKeyDown, sign }) {
   return createPortal(
     <div className={css.backdrop}>
       <div className={css.modal}>
-        <FormSign sign={sign} />
+        <FormSign sign={sign} closeModal={closeModal} />
       </div>
     </div>,
     modalRoot
@@ -28,5 +28,6 @@ export default ModalWindow;
 
 ModalWindow.propTypes = {
   onKeyDown: PropTypes.func.isRequired,
+  closeModal: PropTypes.func.isRequired,
   sign: PropTypes.string,
 };

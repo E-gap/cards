@@ -4,32 +4,45 @@ import * as Yup from 'yup';
 import { useState } from 'react';
 import css from './FormSign.module.css';
 import PropTypes from 'prop-types';
-
 import { BiShow } from 'react-icons/bi';
+import { register, login } from '../../redux/auth/authOperations';
+import { useDispatch } from 'react-redux';
 
-const SignupSchema = Yup.object().shape({
-  email: Yup.string().required('Please input email'),
-  password: Yup.string().required(),
-  confirmPassword: Yup.string().oneOf(
-    [Yup.ref('password'), null],
-    'Passwords must match'
-  ),
-});
-
-function FormSign({ sign }) {
+function FormSign({ sign, closeModal }) {
   const [typePassword, setTypePassword] = useState('password');
   const [typeConfirmPassword, setTypeConfirmPassword] = useState('password');
+  const dispatch = useDispatch();
+
+  const SignupSchema = Yup.object().shape({
+    name: sign ? Yup.string().required('Please input name') : Yup.string(),
+    email: Yup.string().required('Please input email'),
+    password: Yup.string().required(),
+    confirmPassword: Yup.string().oneOf(
+      [Yup.ref('password'), null],
+      'Passwords must match'
+    ),
+  });
 
   const submitForm = (values, actions) => {
-    //console.log(values);
-    //console.log(actions);
     actions.resetForm();
-    const userData = {
+    const userDataForRegister = {
+      name: values.name,
       email: values.email,
       password: values.password,
     };
 
-    console.log(userData);
+    const userDataForLogin = {
+      email: values.email,
+      password: values.password,
+    };
+
+    closeModal();
+
+    if (sign) {
+      dispatch(register(userDataForRegister));
+    } else {
+      dispatch(login(userDataForLogin));
+    }
   };
 
   const toggleShowPassword = () => {
@@ -50,11 +63,20 @@ function FormSign({ sign }) {
 
   return (
     <Formik
-      initialValues={{ email: '', password: '', confirmPassword: '' }}
+      initialValues={{ name: '', email: '', password: '', confirmPassword: '' }}
       validationSchema={SignupSchema}
       onSubmit={submitForm}
     >
       <Form className={css.form}>
+        {sign ? (
+          <label className={css.label}>
+            Name
+            <Field name="name" />
+            <ErrorMessage name="name" component="div" />
+          </label>
+        ) : (
+          ''
+        )}
         <label className={css.label}>
           E-mail
           <Field name="email" />
@@ -91,4 +113,5 @@ export default FormSign;
 
 FormSign.propTypes = {
   sign: PropTypes.string,
+  closeModal: PropTypes.func.isRequired,
 };

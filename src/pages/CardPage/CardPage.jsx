@@ -4,6 +4,8 @@ import Button from '../../components/Button/Button';
 import Header from '../../components/Header/Header';
 import ModalWindow from '../../components/ModalWindow/ModalWindow';
 import { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { logout } from '../../redux/auth/authOperations';
 
 const cardsFromBackend = [
   { _id: 1, score: 10, isShowed: false },
@@ -30,6 +32,8 @@ const CardPage = () => {
   const [totalScore, setTotalScore] = useState(0);
   const [isModalWindowOpen, setIsModalWindowOpen] = useState(false);
   const [sign, setSign] = useState('');
+
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const changeCard = id => {
@@ -77,17 +81,29 @@ const CardPage = () => {
   const handleHeaderButton = e => {
     if (e.target.getAttribute('class').includes('Up')) {
       setSign('signUp');
+      setIsModalWindowOpen(true);
     } else if (e.target.getAttribute('class').includes('In')) {
       setSign('');
+      setIsModalWindowOpen(true);
+    } else if (e.target.getAttribute('class').includes('Out')) {
+      console.log('out');
+      dispatch(logout());
     }
-    setIsModalWindowOpen(true);
+  };
+
+  const closeModal = e => {
+    setIsModalWindowOpen(false);
   };
 
   return (
     <div className={css.cardPage}>
       <div className={css.container}>
         {isModalWindowOpen ? (
-          <ModalWindow onKeyDown={onKeyDown} sign={sign} />
+          <ModalWindow
+            onKeyDown={onKeyDown}
+            closeModal={closeModal}
+            sign={sign}
+          />
         ) : (
           ''
         )}

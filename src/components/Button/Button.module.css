@@ -16,6 +16,10 @@ button {
   margin-right: 10px;
 }
 
+.buttonLogOut {
+  margin-right: 10px;
+}
+
 .loadMore {
   background-color: aqua;
   font-size: 14px;

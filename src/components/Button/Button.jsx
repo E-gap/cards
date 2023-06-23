@@ -17,6 +17,10 @@ const Button = ({ text, handleButton, view }) => {
       style = css.buttonSignUp;
       break;
 
+    case 'logOut':
+      style = css.buttonLogOut;
+      break;
+
     default:
       style = '';
   }
