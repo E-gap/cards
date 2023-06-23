@@ -2,11 +2,19 @@ import PropTypes from 'prop-types';
 import css from './Header.module.css';
 import Button from '../Button/Button';
 import { useSelector } from 'react-redux';
-import { selectIsLogin } from '../../redux/selectors';
+import { selectIsLogin, selectUserName } from '../../redux/selectors';
+import { useDispatch } from 'react-redux';
+import { refresh } from '../../redux/auth/authOperations';
+import { useEffect } from 'react';
 
 const Header = ({ handleHeaderButton }) => {
   const isLogin = useSelector(selectIsLogin);
-  console.log(isLogin);
+  const userName = useSelector(selectUserName);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(refresh());
+  }, [dispatch]);
 
   return (
     <header className={css.header}>
@@ -25,6 +33,7 @@ const Header = ({ handleHeaderButton }) => {
         </div>
       ) : (
         <div>
+          <p className={css.userName}>{userName}</p>
           <Button
             text="Log out"
             handleButton={handleHeaderButton}

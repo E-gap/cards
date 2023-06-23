@@ -8,3 +8,11 @@
   padding-left: 10px;
   padding-right: 10px;
 }
+
+.userName {
+  display: inline;
+  font-size: 15px;
+  color: blue;
+  font-weight: 700;
+  margin-right: 10px;
+}

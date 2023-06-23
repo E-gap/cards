@@ -6,6 +6,7 @@ import ModalWindow from '../../components/ModalWindow/ModalWindow';
 import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { logout } from '../../redux/auth/authOperations';
+import { getAllScores } from '../../redux/scores/scoresOperations';
 
 const cardsFromBackend = [
   { _id: 1, score: 10, isShowed: false },
@@ -86,13 +87,16 @@ const CardPage = () => {
       setSign('');
       setIsModalWindowOpen(true);
     } else if (e.target.getAttribute('class').includes('Out')) {
-      console.log('out');
       dispatch(logout());
     }
   };
 
   const closeModal = e => {
     setIsModalWindowOpen(false);
+  };
+
+  const showAllScores = () => {
+    dispatch(getAllScores());
   };
 
   return (
@@ -112,6 +116,11 @@ const CardPage = () => {
           text="Start New Game"
           handleButton={reloadPage}
           view="buttonNewGame"
+        />
+        <Button
+          text="Show all Scores"
+          handleButton={showAllScores}
+          view="buttonShowAllScores"
         />
 
         {!gameOver ? (

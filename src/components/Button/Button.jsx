@@ -21,6 +21,10 @@ const Button = ({ text, handleButton, view }) => {
       style = css.buttonLogOut;
       break;
 
+    case 'buttonAllScores':
+      style = css.buttonShowAllScores;
+      break;
+
     default:
       style = '';
   }
