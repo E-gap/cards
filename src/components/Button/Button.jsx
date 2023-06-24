@@ -25,6 +25,10 @@ const Button = ({ text, handleButton, view }) => {
       style = css.buttonShowAllScores;
       break;
 
+    case 'buttonMyScores':
+      style = css.buttonShowMyScores;
+      break;
+
     default:
       style = '';
   }

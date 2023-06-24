@@ -6,7 +6,11 @@ import ModalWindow from '../../components/ModalWindow/ModalWindow';
 import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { logout } from '../../redux/auth/authOperations';
-import { getAllScores } from '../../redux/scores/scoresOperations';
+import {
+  getAllScores,
+  getUserScores,
+  addScore,
+} from '../../redux/scores/scoresOperations';
 
 const cardsFromBackend = [
   { _id: 1, score: 10, isShowed: false },
@@ -46,6 +50,12 @@ const CardPage = () => {
 
       if (quantityShowedCards.length >= 2) {
         setGameOver('Game Over');
+        const resultGame = {
+          score: totalScore,
+          date: Date.now(),
+        };
+
+        dispatch(addScore(resultGame));
       }
 
       const cardsAfterSelect = cards.map((card, index) => {
@@ -99,6 +109,10 @@ const CardPage = () => {
     dispatch(getAllScores());
   };
 
+  const showMyScores = () => {
+    dispatch(getUserScores());
+  };
+
   return (
     <div className={css.cardPage}>
       <div className={css.container}>
@@ -121,6 +135,11 @@ const CardPage = () => {
           text="Show all Scores"
           handleButton={showAllScores}
           view="buttonShowAllScores"
+        />
+        <Button
+          text="Show my Scores"
+          handleButton={showMyScores}
+          view="buttonShowMyScores"
         />
 
         {!gameOver ? (

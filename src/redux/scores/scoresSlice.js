@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { getAllScores } from './scoresOperations';
+import { getAllScores, getUserScores, addScore } from './scoresOperations';
 
 const scoreSlice = createSlice({
   name: 'score',
@@ -21,6 +21,30 @@ const scoreSlice = createSlice({
         state.isLoading = false;
       })
       .addCase(getAllScores.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.payload;
+      })
+      .addCase(getUserScores.pending, state => {
+        state.isLoading = true;
+        state.error = null;
+      })
+      .addCase(getUserScores.fulfilled, (state, action) => {
+        console.log(action.payload);
+        state.scoresByUser = action.payload;
+        state.isLoading = false;
+      })
+      .addCase(getUserScores.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.payload;
+      })
+      .addCase(addScore.pending, state => {
+        state.isLoading = true;
+        state.error = null;
+      })
+      .addCase(addScore.fulfilled, (state, action) => {
+        state.isLoading = false;
+      })
+      .addCase(addScore.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.payload;
       }),
