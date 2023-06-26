@@ -1,0 +1,10 @@
+.cardList {
+  /* width: 500px; */
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
