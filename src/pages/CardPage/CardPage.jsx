@@ -11,6 +11,7 @@ import {
   getUserScores,
 } from '../../redux/scores/scoresOperations';
 import { selectIsLogin } from '../../redux/selectors';
+import FormSign from '../../components/FormSign/FormSign';
 
 const CardPage = () => {
   const [gameOver, setGameOver] = useState('');
@@ -64,11 +65,9 @@ const CardPage = () => {
       <div className={css.container}>
         <Header handleHeaderButton={handleHeaderButton} />
         {isModalWindowOpen ? (
-          <ModalWindow
-            onKeyDown={onKeyDown}
-            closeModal={closeModal}
-            sign={sign}
-          />
+          <ModalWindow onKeyDown={onKeyDown}>
+            <FormSign sign={sign} closeModal={closeModal} />
+          </ModalWindow>
         ) : (
           ''
         )}
