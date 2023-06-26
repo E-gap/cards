@@ -1,5 +1,6 @@
 .cardList {
   width: 100%;
+  max-width: 230px;
   display: flex;
   justify-content: space-between;
   list-style: none;
@@ -7,4 +8,5 @@
   padding-left: 0;
   margin-left: auto;
   margin-right: auto;
+  gap: 10px;
 }

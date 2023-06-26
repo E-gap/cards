@@ -33,7 +33,7 @@ const Header = ({ handleHeaderButton }) => {
         </div>
       ) : (
         <div>
-          <p className={css.userName}>{userName}</p>
+          <p className={css.userName}>user: {userName}</p>
           <Button
             text="Log out"
             handleButton={handleHeaderButton}

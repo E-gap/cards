@@ -1,16 +1,14 @@
 .cardPage {
-  background-color: palegoldenrod;
+  background-color: lightskyblue;
   height: 100vh;
   width: 100vw;
 }
 
 .container {
-  height: 100vh;
-  background-color: palegoldenrod;
+  height: 100%;
   max-width: 480px;
   margin-left: auto;
   margin-right: auto;
-  padding-top: 20px;
   padding-bottom: 20px;
   padding-left: var(--default-interval);
   padding-right: var(--default-interval);
@@ -35,12 +33,14 @@
   100% {
     top: 50%;
     left: 50%;
+    box-shadow: 15px 15px 15px red, -15px 15px 15px red, -15px -15px 15px red,
+      15px -15px 15px red;
     transform: translate(-50%, -50%);
   }
 }
 
 .gameOver {
-  width: 250px;
+  width: 230px;
   color: red;
   font-size: 20px;
   font-weight: 600;
@@ -59,9 +59,8 @@
   align-items: center;
 
   @media screen and (min-width: 768px) {
-    font-size: 30px;
-    font-weight: 800;
-    width: 400px;
+    font-size: 20px;
+    font-weight: 600;
   }
 }
 
@@ -75,13 +74,14 @@
 
 .totalScore {
   color: blue;
-  font-weight: 600;
+  font-weight: 500;
   text-align: center;
   font-size: 10px;
+  margin-bottom: var(--default-interval);
 
   @media screen and (min-width: 768px) {
-    font-size: 20px;
-    font-weight: 800;
+    font-size: 15px;
+    font-weight: 600;
   }
 }
 

@@ -1,14 +1,14 @@
 .item {
   position: relative;
   flex-basis: calc((100% - 3 * 10px) / 4);
-  height: 150px;
+  max-width: 50px;
+  height: 75px;
   transition: 0.1s ease-in-out;
   background-color: aqua;
   border-radius: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 10px;
   background-image: url(../../images/shirt.jpg);
   background-size: cover;
 }
@@ -17,12 +17,13 @@
   background-image: unset;
   background-color: yellow;
   rotate: 1 2 1 360deg;
+  border: 2px solid green;
 }
 
 .score {
   color: green;
-  font-size: 50px;
-  font-weight: 800;
+  font-size: 25px;
+  font-weight: 700;
   justify-content: center;
   align-items: center;
   margin-top: 0;

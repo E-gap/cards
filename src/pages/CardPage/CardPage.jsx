@@ -98,7 +98,9 @@ const CardPage = () => {
         {!gameOver ? (
           <p className={css.totalScore}>Your current score: {totalScore}</p>
         ) : (
-          <p style={{ color: 'palegoldenrod' }}>_</p>
+          <p className={css.totalScore} style={{ visibility: 'hidden' }}>
+            Your current score: {totalScore}
+          </p>
         )}
         <CardList
           setGameOver={setGameOver}

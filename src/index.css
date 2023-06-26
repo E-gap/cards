@@ -32,4 +32,18 @@ p {
 
 button {
   cursor: pointer;
+  font-size: 10px;
+  border: 2px solid darkgreen;
+  background-color: aliceblue;
+}
+
+button:hover {
+  background-color: darkgreen;
+  color: yellow;
+  border: 2px solid red;
+}
+
+ul {
+  margin-top: 0;
+  margin-bottom: 0;
 }
