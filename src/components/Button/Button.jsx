@@ -21,11 +21,11 @@ const Button = ({ text, handleButton, view }) => {
       style = css.buttonLogOut;
       break;
 
-    case 'buttonAllScores':
+    case 'buttonShowAllScores':
       style = css.buttonShowAllScores;
       break;
 
-    case 'buttonMyScores':
+    case 'buttonShowMyScores':
       style = css.buttonShowMyScores;
       break;
 

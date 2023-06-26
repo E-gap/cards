@@ -4,18 +4,20 @@ import CardList from '../../components/CardList/CardList';
 import Header from '../../components/Header/Header';
 import ModalWindow from '../../components/ModalWindow/ModalWindow';
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { logout } from '../../redux/auth/authOperations';
 import {
   getAllScores,
   getUserScores,
 } from '../../redux/scores/scoresOperations';
+import { selectIsLogin } from '../../redux/selectors';
 
 const CardPage = () => {
   const [gameOver, setGameOver] = useState('');
   const [totalScore, setTotalScore] = useState(0);
   const [isModalWindowOpen, setIsModalWindowOpen] = useState(false);
   const [sign, setSign] = useState('');
+  const isLogin = useSelector(selectIsLogin);
 
   const dispatch = useDispatch();
 
@@ -24,6 +26,10 @@ const CardPage = () => {
   };
 
   const onKeyDown = e => {
+    if (e.target.getAttribute('class').includes('backdrop')) {
+      setIsModalWindowOpen(false);
+    }
+
     if (e.code === 'Escape') {
       setIsModalWindowOpen(false);
     }
@@ -71,16 +77,22 @@ const CardPage = () => {
           handleButton={reloadPage}
           view="buttonNewGame"
         />
-        <Button
-          text="Show all Scores"
-          handleButton={showAllScores}
-          view="buttonShowAllScores"
-        />
-        <Button
-          text="Show my Scores"
-          handleButton={showMyScores}
-          view="buttonShowMyScores"
-        />
+        {isLogin ? (
+          <div className={css.buttonsShowResults}>
+            <Button
+              text="Show all Scores"
+              handleButton={showAllScores}
+              view="buttonShowAllScores"
+            />
+            <Button
+              text="Show my Scores"
+              handleButton={showMyScores}
+              view="buttonShowMyScores"
+            />
+          </div>
+        ) : (
+          ''
+        )}
 
         {!gameOver ? (
           <p className={css.totalScore}>Your current score: {totalScore}</p>
@@ -97,7 +109,7 @@ const CardPage = () => {
         {gameOver ? (
           <div className={css.gameOver}>
             <p>{gameOver}</p>
-            <p>Your final score: {totalScore}</p>
+            <p className={css.finalScore}>Your final score: {totalScore}</p>
           </div>
         ) : (
           ''

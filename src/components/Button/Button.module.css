@@ -10,32 +10,30 @@ button {
 
 .buttonShowAllScores {
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+  margin-right: var(--default-interval);
 }
 
 .buttonShowMyScores {
   display: block;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .buttonNewGame {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: var(--default-interval);
 }
 
 .buttonSignIn {
-  margin-right: 10px;
+  margin-right: var(--default-interval);
 }
 
 .buttonSignUp {
-  margin-right: 10px;
+  margin-right: var(--default-interval);
 }
 
 .buttonLogOut {
-  margin-right: 10px;
+  margin-right: var(--default-interval);
 }
 
 .loadMore {

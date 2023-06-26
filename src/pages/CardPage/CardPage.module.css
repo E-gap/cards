@@ -1,17 +1,18 @@
 .cardPage {
   background-color: palegoldenrod;
-  min-height: 100vh;
+  height: 100vh;
 }
 
 .container {
+  height: 100vh;
   background-color: palegoldenrod;
   max-width: 480px;
   margin-left: auto;
   margin-right: auto;
   padding-top: 20px;
   padding-bottom: 20px;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: var(--default-interval);
+  padding-right: var(--default-interval);
   border: 1px solid red;
 
   @media screen and (min-width: 768px) {
@@ -38,9 +39,10 @@
 }
 
 .gameOver {
+  width: 250px;
   color: red;
-  font-size: 30px;
-  font-weight: 800;
+  font-size: 20px;
+  font-weight: 600;
   background-color: greenyellow;
   border-radius: 10px;
   position: absolute;
@@ -48,12 +50,18 @@
   animation-duration: 2000ms;
   animation-timing-function: linear;
   animation-fill-mode: forwards;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: var(--default-interval);
+  padding-right: var(--default-interval);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  @media screen and (min-width: 768px) {
+    font-size: 30px;
+    font-weight: 800;
+    width: 400px;
+  }
 }
 
 .error {
@@ -66,5 +74,22 @@
 
 .totalScore {
   color: blue;
+  font-weight: 600;
   text-align: center;
+  font-size: 10px;
+
+  @media screen and (min-width: 768px) {
+    font-size: 20px;
+    font-weight: 800;
+  }
+}
+
+.finalScore {
+  width: 100%;
+  text-align: center;
+}
+
+.buttonsShowResults {
+  display: flex;
+  justify-content: flex-start;
 }

@@ -8,10 +8,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
 .modal {
   border-radius: 10px;
   width: 300px;
   background-color: greenyellow;
+  overflow: hidden;
 }

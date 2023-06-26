@@ -8,9 +8,15 @@ const modalRoot = document.querySelector('#modal-root');
 
 function ModalWindow({ onKeyDown, closeModal, sign }) {
   useEffect(() => {
+    const body = document.querySelector('body');
+
+    body.style.overflow = 'hidden';
+    window.addEventListener('click', onKeyDown);
     window.addEventListener('keydown', onKeyDown);
     return () => {
       window.removeEventListener('keydown', onKeyDown);
+      window.removeEventListener('click', onKeyDown);
+      body.style.overflow = 'auto';
     };
   }, [onKeyDown]);
 
