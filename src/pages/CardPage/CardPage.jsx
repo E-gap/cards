@@ -62,6 +62,7 @@ const CardPage = () => {
   return (
     <div className={css.cardPage}>
       <div className={css.container}>
+        <Header handleHeaderButton={handleHeaderButton} />
         {isModalWindowOpen ? (
           <ModalWindow
             onKeyDown={onKeyDown}
@@ -71,7 +72,7 @@ const CardPage = () => {
         ) : (
           ''
         )}
-        <Header handleHeaderButton={handleHeaderButton} />
+
         <Button
           text="Start New Game"
           handleButton={reloadPage}

@@ -1,6 +1,7 @@
 .cardPage {
   background-color: palegoldenrod;
   height: 100vh;
+  width: 100vw;
 }
 
 .container {
