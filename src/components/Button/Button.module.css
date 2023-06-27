@@ -17,6 +17,12 @@ button {
   display: block;
 }
 
+.sortByDate,
+.sortByScore {
+  font-size: 7px;
+  padding: 2px 2px 2px 2px;
+}
+
 .buttonNewGame {
   display: block;
   margin-left: auto;

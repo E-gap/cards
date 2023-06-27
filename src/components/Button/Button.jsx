@@ -33,6 +33,14 @@ const Button = ({ text, handleButton, view }) => {
       style = css.buttonQuestionSign;
       break;
 
+    case 'sortByDate':
+      style = css.sortByDate;
+      break;
+
+    case 'sortByScore':
+      style = css.sortByScore;
+      break;
+
     default:
       style = '';
   }
