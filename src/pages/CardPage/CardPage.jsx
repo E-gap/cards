@@ -2,7 +2,7 @@ import css from './CardPage.module.css';
 import Button from '../../components/Button/Button';
 import CardList from '../../components/CardList/CardList';
 import Header from '../../components/Header/Header';
-import ModalWindow from '../../components/ModalWindow/ModalWindow';
+import { ModalWindow } from '../../components/ModalWindow/ModalWindow';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { logout } from '../../redux/auth/authOperations';
@@ -65,8 +65,15 @@ const CardPage = () => {
       <div className={css.container}>
         <Header handleHeaderButton={handleHeaderButton} />
         {isModalWindowOpen ? (
-          <ModalWindow onKeyDown={onKeyDown}>
-            <FormSign sign={sign} closeModal={closeModal} />
+          <ModalWindow
+            onKeyDown={onKeyDown}
+            setIsModalWindowOpen={setIsModalWindowOpen}
+          >
+            <FormSign
+              sign={sign}
+              closeModal={closeModal}
+              setIsModalWindowOpen
+            />
           </ModalWindow>
         ) : (
           ''

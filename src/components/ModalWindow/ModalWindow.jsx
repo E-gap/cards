@@ -5,8 +5,14 @@ import { useEffect } from 'react';
 
 const modalRoot = document.querySelector('#modal-root');
 
-function ModalWindow({ onKeyDown, children }) {
+export const ModalWindow = ({ setIsModalWindowOpen, children }) => {
   useEffect(() => {
+    const onKeyDown = e => {
+      if (e.target.getAttribute('class').includes('backdrop')) {
+        setIsModalWindowOpen(false);
+      }
+    };
+
     const body = document.querySelector('body');
     body.style.overflow = 'hidden';
     window.addEventListener('click', onKeyDown);
@@ -16,7 +22,7 @@ function ModalWindow({ onKeyDown, children }) {
       window.removeEventListener('click', onKeyDown);
       body.style.overflow = 'auto';
     };
-  }, [onKeyDown]);
+  }, [setIsModalWindowOpen]);
 
   return createPortal(
     <div className={css.backdrop}>
@@ -24,10 +30,9 @@ function ModalWindow({ onKeyDown, children }) {
     </div>,
     modalRoot
   );
-}
-
-export default ModalWindow;
+};
 
 ModalWindow.propTypes = {
   onKeyDown: PropTypes.func.isRequired,
+  setIsModalWindowOpen: PropTypes.func.isRequired,
 };
