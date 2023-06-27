@@ -64,8 +64,6 @@ const CardPage = () => {
     }
   };
 
-  console.log(sign);
-
   return (
     <div className={css.cardPage}>
       <div className={css.container}>

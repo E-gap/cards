@@ -65,3 +65,18 @@ button {
   background-color: yellow;
   color: #000000;
 }
+
+.buttonQuestionSign {
+  color: blue;
+  background-color: greenyellow;
+  border: none;
+  text-decoration: underline;
+  font-weight: 700;
+}
+
+.buttonQuestionSign:hover,
+.buttonQuestionSign:focus {
+  border: none;
+  background-color: greenyellow;
+  color: brown;
+}

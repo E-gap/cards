@@ -29,6 +29,10 @@ const Button = ({ text, handleButton, view }) => {
       style = css.buttonShowMyScores;
       break;
 
+    case 'buttonQuestionSign':
+      style = css.buttonQuestionSign;
+      break;
+
     default:
       style = '';
   }
