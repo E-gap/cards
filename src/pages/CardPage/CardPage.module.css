@@ -25,17 +25,29 @@
 
 @keyframes place {
   0% {
-    top: 0%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: -100%;
+    left: -100%;
   }
 
-  100% {
+  20% {
     top: 50%;
     left: 50%;
     box-shadow: 15px 15px 15px red, -15px 15px 15px red, -15px -15px 15px red,
       15px -15px 15px red;
     transform: translate(-50%, -50%);
+  }
+
+  80% {
+    top: 50%;
+    left: 50%;
+    box-shadow: 15px 15px 15px red, -15px 15px 15px red, -15px -15px 15px red,
+      15px -15px 15px red;
+    transform: translate(-50%, -50%);
+  }
+
+  100% {
+    top: -100%;
+    left: 200%;
   }
 }
 
@@ -48,7 +60,7 @@
   border-radius: 10px;
   position: absolute;
   animation-name: place;
-  animation-duration: 2000ms;
+  animation-duration: 4000ms;
   animation-timing-function: linear;
   animation-fill-mode: forwards;
   padding-left: var(--default-interval);

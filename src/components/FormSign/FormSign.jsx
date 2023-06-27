@@ -14,7 +14,10 @@ function FormSign({ sign, closeModal }) {
   const dispatch = useDispatch();
 
   const SignupSchema = Yup.object().shape({
-    name: sign ? Yup.string().required('Please input name') : Yup.string(),
+    name:
+      sign === 'signUp'
+        ? Yup.string().required('Please input name')
+        : Yup.string(),
     email: Yup.string().required('Please input email'),
     password: Yup.string().required(),
     confirmPassword: Yup.string().oneOf(
@@ -38,7 +41,7 @@ function FormSign({ sign, closeModal }) {
 
     closeModal();
 
-    if (sign) {
+    if (sign === 'signUp') {
       dispatch(register(userDataForRegister));
     } else {
       dispatch(login(userDataForLogin));
@@ -68,14 +71,12 @@ function FormSign({ sign, closeModal }) {
       onSubmit={submitForm}
     >
       <Form className={css.form}>
-        {sign ? (
+        {sign === 'signUp' && (
           <label className={css.label}>
             Name
             <Field name="name" />
             <ErrorMessage name="name" component="div" />
           </label>
-        ) : (
-          ''
         )}
         <label className={css.label}>
           E-mail
@@ -88,7 +89,7 @@ function FormSign({ sign, closeModal }) {
           <BiShow className={css.buttonHide} onClick={toggleShowPassword} />
           <ErrorMessage name="password" component="div" />
         </label>
-        {sign ? (
+        {sign === 'signUp' && (
           <label className={css.label}>
             Confirm password
             <Field type={typeConfirmPassword} name="confirmPassword" />
@@ -98,8 +99,6 @@ function FormSign({ sign, closeModal }) {
             />
             <ErrorMessage name="confirmPassword" component="div" />
           </label>
-        ) : (
-          ''
         )}
         <button type="submit" className={css.submit}>
           Submit

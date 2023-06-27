@@ -12,6 +12,7 @@ import {
 } from '../../redux/scores/scoresOperations';
 import { selectIsLogin } from '../../redux/selectors';
 import FormSign from '../../components/FormSign/FormSign';
+import { Scores } from '../../components/Scores/Scores';
 
 const CardPage = () => {
   const [gameOver, setGameOver] = useState('');
@@ -41,7 +42,7 @@ const CardPage = () => {
       setSign('signUp');
       setIsModalWindowOpen(true);
     } else if (e.target.getAttribute('class').includes('In')) {
-      setSign('');
+      setSign('signIn');
       setIsModalWindowOpen(true);
     } else if (e.target.getAttribute('class').includes('Out')) {
       dispatch(logout());
@@ -52,13 +53,18 @@ const CardPage = () => {
     setIsModalWindowOpen(false);
   };
 
-  const showAllScores = () => {
-    dispatch(getAllScores());
+  const showScores = e => {
+    setIsModalWindowOpen(true);
+    if (e.target.getAttribute('class').includes('AllScores')) {
+      setSign('allScores');
+      dispatch(getAllScores());
+    } else if (e.target.getAttribute('class').includes('MyScores')) {
+      dispatch(getUserScores());
+      setSign('myScores');
+    }
   };
 
-  const showMyScores = () => {
-    dispatch(getUserScores());
-  };
+  console.log(sign);
 
   return (
     <div className={css.cardPage}>
@@ -69,16 +75,16 @@ const CardPage = () => {
             onKeyDown={onKeyDown}
             setIsModalWindowOpen={setIsModalWindowOpen}
           >
-            <FormSign
-              sign={sign}
-              closeModal={closeModal}
-              setIsModalWindowOpen
-            />
+            {sign.includes('sign') && (
+              <FormSign sign={sign} closeModal={closeModal} />
+            )}
+            {sign.includes('Scores') && (
+              <Scores sign={sign} closeModal={closeModal} />
+            )}
           </ModalWindow>
         ) : (
           ''
         )}
-
         <Button
           text="Start New Game"
           handleButton={reloadPage}
@@ -88,19 +94,18 @@ const CardPage = () => {
           <div className={css.buttonsShowResults}>
             <Button
               text="Show all Scores"
-              handleButton={showAllScores}
+              handleButton={showScores}
               view="buttonShowAllScores"
             />
             <Button
               text="Show my Scores"
-              handleButton={showMyScores}
+              handleButton={showScores}
               view="buttonShowMyScores"
             />
           </div>
         ) : (
           ''
         )}
-
         {!gameOver ? (
           <p className={css.totalScore}>Your current score: {totalScore}</p>
         ) : (

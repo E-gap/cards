@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { addScore } from '../../redux/scores/scoresOperations';
 import { cardsFromBackend } from './cardsFromBackend';
+import moment from 'moment';
 import css from './CardList.module.css';
 
 const CardList = ({ setGameOver, gameOver, setTotalScore, totalScore }) => {
@@ -24,7 +25,7 @@ const CardList = ({ setGameOver, gameOver, setTotalScore, totalScore }) => {
         setGameOver('Game Over');
         const resultGame = {
           score: totalScore,
-          date: Date.now(),
+          date: moment().format('DD.MM.YYYY hh:mm:ss'),
         };
         dispatch(addScore(resultGame));
       }

@@ -8,7 +8,7 @@ const modalRoot = document.querySelector('#modal-root');
 export const ModalWindow = ({ setIsModalWindowOpen, children }) => {
   useEffect(() => {
     const onKeyDown = e => {
-      if (e.target.getAttribute('class').includes('backdrop')) {
+      if (e.target.getAttribute('class')?.includes('backdrop')) {
         setIsModalWindowOpen(false);
       }
     };

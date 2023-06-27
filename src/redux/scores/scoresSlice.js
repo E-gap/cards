@@ -16,7 +16,6 @@ const scoreSlice = createSlice({
         state.error = null;
       })
       .addCase(getAllScores.fulfilled, (state, action) => {
-        console.log(action.payload);
         state.allScores = action.payload;
         state.isLoading = false;
       })
