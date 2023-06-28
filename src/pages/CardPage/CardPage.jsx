@@ -10,7 +10,11 @@ import {
   getAllScores,
   getUserScores,
 } from '../../redux/scores/scoresOperations';
-import { selectIsLogin } from '../../redux/selectors';
+import {
+  selectIsLogin,
+  selectAllScores,
+  selectScoresByUser,
+} from '../../redux/selectors';
 import FormSign from '../../components/FormSign/FormSign';
 import { Scores } from '../../components/Scores/Scores';
 
@@ -20,6 +24,8 @@ const CardPage = () => {
   const [isModalWindowOpen, setIsModalWindowOpen] = useState(false);
   const [sign, setSign] = useState('');
   const isLogin = useSelector(selectIsLogin);
+  const allScores = useSelector(selectAllScores);
+  const myScores = useSelector(selectScoresByUser);
 
   const dispatch = useDispatch();
 
@@ -76,8 +82,11 @@ const CardPage = () => {
             {sign.includes('sign') && (
               <FormSign sign={sign} closeModal={closeModal} />
             )}
-            {sign.includes('Scores') && (
-              <Scores sign={sign} closeModal={closeModal} />
+            {sign === 'allScores' && (
+              <Scores sign={sign} closeModal={closeModal} scores={allScores} />
+            )}
+            {sign === 'myScores' && (
+              <Scores sign={sign} closeModal={closeModal} scores={myScores} />
             )}
           </ModalWindow>
         ) : (

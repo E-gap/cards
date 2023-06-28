@@ -1,22 +1,29 @@
-import { useSelector } from 'react-redux';
+// import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
-import { selectAllScores, selectScoresByUser } from 'redux/selectors';
+// import { selectAllScores, selectScoresByUser } from 'redux/selectors';
 import css from './Scores.module.css';
 import Button from '../Button/Button';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
-export const Scores = ({ sign, closeModal }) => {
-  const allScores = useSelector(selectAllScores);
-  const scoresByUser = useSelector(selectScoresByUser);
-  const [scores, setScores] = useState(() => {
-    return sign === 'allScores' ? allScores : scoresByUser;
+export const Scores = ({ sign, closeModal, scores }) => {
+  const [finalScores, setFinalScores] = useState(() => {
+    return scores;
   });
+
+  useEffect(() => {
+    setFinalScores(scores);
+  }, [scores]);
+
+  // console.log(scoresByUser);
+  // console.log(scores);
 
   const handleButton = e => {
     if (e.target.textContent.includes('Date')) {
-      setScores([...scores].sort((a, b) => b.date.localeCompare(a.date)));
+      setFinalScores(
+        [...finalScores].sort((a, b) => b.date.localeCompare(a.date))
+      );
     } else {
-      setScores([...scores].sort((a, b) => b.score - a.score));
+      setFinalScores([...finalScores].sort((a, b) => b.score - a.score));
     }
   };
 
@@ -46,7 +53,7 @@ export const Scores = ({ sign, closeModal }) => {
           </tr>
         </thead>
         <tbody>
-          {scores.map(({ score, date, owner }, index) => {
+          {finalScores.map(({ score, date, owner }, index) => {
             return index % 2 === 0 ? (
               <tr key={index}>
                 <td className={css.pair}>{date}</td>
@@ -72,6 +79,7 @@ export const Scores = ({ sign, closeModal }) => {
 };
 
 Scores.propTypes = {
+  scores: PropTypes.array,
   sign: PropTypes.string,
   closeModal: PropTypes.func,
 };
