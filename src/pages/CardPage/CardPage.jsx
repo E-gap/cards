@@ -14,6 +14,7 @@ import {
   selectIsLogin,
   selectAllScores,
   selectScoresByUser,
+  selectIsLoading,
 } from '../../redux/selectors';
 import FormSign from '../../components/FormSign/FormSign';
 import { Scores } from '../../components/Scores/Scores';
@@ -26,6 +27,9 @@ const CardPage = () => {
   const isLogin = useSelector(selectIsLogin);
   const allScores = useSelector(selectAllScores);
   const myScores = useSelector(selectScoresByUser);
+  const isLoading = useSelector(selectIsLoading);
+
+  console.log(isLoading);
 
   const dispatch = useDispatch();
 

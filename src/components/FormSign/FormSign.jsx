@@ -43,7 +43,7 @@ function FormSign({ sign, closeModal }) {
       password: values.password,
     };
 
-    closeModal();
+    // closeModal();
 
     if (signValue === 'signUp') {
       dispatch(register(userDataForRegister));
