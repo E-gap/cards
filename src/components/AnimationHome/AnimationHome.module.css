@@ -1,0 +1,7 @@
+.animation {
+  height: 100px;
+  width: 70px;
+  background-image: url(../../images/shirt.jpg);
+  background-size: cover;
+  border-radius: 10px;
+}

@@ -1,12 +1,12 @@
 import css from './HomePage.module.css';
 import { NavLink } from 'react-router-dom';
-import ItemCard from '../../components/ItemCard/ItemCard';
+import { AnimationHome } from '../../components/AnimationHome/AnimationHome';
 
 const HomePage = () => {
   return (
     <div className={css.homePage}>
       <div className={css.container}>
-        <ItemCard className={css.card} />
+        <AnimationHome />
         <NavLink to="/cards" className={css.moveToCards}>
           Go to Cards
         </NavLink>
