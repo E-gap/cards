@@ -11,8 +11,22 @@
 }
 
 .modal {
+  position: relative;
   border-radius: 10px;
   width: 300px;
   background-color: greenyellow;
   padding-bottom: 5px;
+}
+
+.closeModalIcon {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  color: blue;
+}
+
+.closeModalIcon:hover,
+.closeModalIcon:focus {
+  color: red;
+  cursor: pointer;
 }
