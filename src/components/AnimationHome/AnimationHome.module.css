@@ -3,104 +3,132 @@
   height: 100px;
   width: 70px;
   border-radius: 10px;
-  animation-name: place;
   animation-duration: 10000ms;
+  animation-direction: alternate;
   animation-timing-function: linear;
   animation-fill-mode: both;
   animation-iteration-count: infinite;
 }
 
-@keyframes place {
+.animation30 {
+  animation-name: place30;
+}
+
+.animation60 {
+  animation-name: place60;
+}
+
+.animation90 {
+  animation-name: place90;
+}
+
+@keyframes place30 {
   0% {
     top: 0%;
-    left: 0%;
-    background-image: url(../../images/shirt.jpg);
-    background-size: cover;
-    border: none;
-  }
-
-  10% {
-    top: 10%;
     left: 10%;
-    rotate: 1 2 1 180deg;
-    background-color: yellow;
-    border: 2px solid green;
-    background-image: none;
-  }
-
-  20% {
-    top: 20%;
-    left: 20%;
-    rotate: 0 0 0 180deg;
     background-image: url(../../images/shirt.jpg);
     background-size: cover;
     border: none;
   }
 
-  30% {
-    top: 30%;
-    left: 30%;
+  33% {
+    top: 79%;
+    left: 33%;
     rotate: 1 2 1 180deg;
-    background-image: none;
     background-color: yellow;
     border: 2px solid green;
+    background-image: url(../../images/bg30.jpg);
   }
 
-  40% {
-    top: 40%;
-    left: 40%;
-    rotate: 0 0 0 180deg;
-    background-image: url(../../images/shirt.jpg);
-    background-size: cover;
-    border: none;
-  }
-
-  50% {
-    top: 50%;
-    left: 50%;
-    rotate: 1 2 1 180deg;
-    background-image: none;
-    background-color: yellow;
-    border: 2px solid green;
-  }
-  60% {
-    top: 40%;
-    left: 40%;
-    rotate: 0 0 0 180deg;
-    background-image: url(../../images/shirt.jpg);
-    background-size: cover;
-    border: none;
-  }
-  70% {
-    top: 30%;
-    left: 30%;
-    rotate: 1 2 1 180deg;
-    background-image: none;
-    background-color: yellow;
-    border: 2px solid green;
-  }
-  80% {
-    top: 20%;
-    left: 20%;
-    rotate: 0 0 0 180deg;
-    background-image: url(../../images/shirt.jpg);
-    background-size: cover;
-    border: none;
-  }
-  90% {
-    top: 10%;
-    left: 10%;
-    rotate: 1 2 1 180deg;
-    background-image: none;
-    background-color: yellow;
-    border: 2px solid green;
-  }
-  100% {
+  66% {
     top: 0%;
-    left: 0%;
+    left: 66%;
     rotate: 0 0 0 180deg;
     background-image: url(../../images/shirt.jpg);
     background-size: cover;
     border: none;
+  }
+
+  100% {
+    top: 79%;
+    left: 80%;
+    rotate: 1 2 1 180deg;
+    background-image: url(../../images/bg30.jpg);
+    background-color: yellow;
+    border: 2px solid green;
+  }
+}
+
+@keyframes place60 {
+  0% {
+    top: 60%;
+    left: 5%;
+    background-image: url(../../images/shirt.jpg);
+    background-size: cover;
+    border: none;
+  }
+
+  33% {
+    top: 20%;
+    left: 27%;
+    rotate: 1 2 1 180deg;
+    background-color: yellow;
+    border: 2px solid green;
+    background-image: url(../../images/bg60.jpg);
+  }
+
+  66% {
+    top: 60%;
+    left: 58%;
+    rotate: 0 0 0 180deg;
+    background-image: url(../../images/shirt.jpg);
+    background-size: cover;
+    border: none;
+  }
+
+  100% {
+    top: 20%;
+    left: 80%;
+    rotate: 1 2 1 180deg;
+    background-image: url(../../images/bg60.jpg);
+    background-color: yellow;
+    border: 2px solid green;
+  }
+}
+
+@keyframes place90 {
+  0% {
+    top: 10%;
+    left: 5%;
+    background-image: url(../../images/shirt.jpg);
+    background-size: cover;
+    border: none;
+  }
+
+  33% {
+    top: 30%;
+    left: 80%;
+    rotate: 1 2 1 180deg;
+    background-color: yellow;
+    border: 2px solid green;
+    background-image: url(../../images/bg120.jpg);
+  }
+
+  66% {
+    top: 60%;
+    left: 5%;
+    rotate: 0 0 0 180deg;
+    background-image: url(../../images/shirt.jpg);
+    background-size: cover;
+    border: none;
+  }
+
+  100% {
+    top: 75%;
+    left: 80%;
+    rotate: 1 2 1 180deg;
+    background-image: url(../../images/bg120.jpg);
+    background-color: yellow;
+    border: 2px solid green;
   }
 }
