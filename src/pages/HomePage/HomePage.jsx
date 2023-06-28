@@ -5,11 +5,9 @@ const HomePage = () => {
   return (
     <div className={css.homePage}>
       <div className={css.container}>
-        <div className={css.linkPicture}>
-          <NavLink to="/cards" className={css.moveToTweets}>
-            Go to Cards
-          </NavLink>
-        </div>
+        <NavLink to="/cards" className={css.moveToCards}>
+          Go to Cards
+        </NavLink>
       </div>
     </div>
   );

@@ -5,16 +5,13 @@
     #5736a3 54.28%,
     #4b2a99 78.99%
   );
+  height: 100vh;
+  width: 100vw;
 }
 
 .container {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 1200px;
-  height: 100vh;
+  max-width: 480px;
+  height: 100%;
   margin-left: auto;
   margin-right: auto;
   background: linear-gradient(
@@ -23,37 +20,27 @@
     #5736a3 54.28%,
     #4b2a99 78.99%
   );
-}
-
-.linkPicture {
   display: flex;
-  justify-content: center;
   align-items: center;
-  margin-bottom: 30px;
+  justify-content: center;
+
+  @media screen and (min-width: 768px) {
+    max-width: 768px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    max-width: 1200px;
+  }
 }
 
-.moveToTweets {
+.moveToCards {
   font-size: 18px;
   color: yellow;
   font-weight: 600;
   text-decoration: none;
 }
 
-.moveToTweets:hover,
-.moveToTweets:focus {
+.moveToCards:hover,
+.moveToCards:focus {
   color: magenta;
-}
-
-.photouser {
-  border-radius: 50%;
-  height: 100px;
-  width: 100px;
-}
-
-.listUser {
-  display: flex;
-  justify-content: space-around;
-  list-style: none;
-  padding-left: 0;
-  width: 70%;
 }
