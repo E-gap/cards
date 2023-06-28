@@ -44,3 +44,51 @@
 .moveToCards:focus {
   color: magenta;
 }
+
+.card {
+  width: 230px;
+  color: red;
+  font-size: 20px;
+  font-weight: 600;
+  background-color: greenyellow;
+  border-radius: 10px;
+  position: absolute;
+  animation-name: place;
+  animation-duration: 4000ms;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  padding-left: var(--default-interval);
+  padding-right: var(--default-interval);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes place {
+  0% {
+    top: -100%;
+    left: -100%;
+  }
+
+  20% {
+    top: 50%;
+    left: 50%;
+    box-shadow: 15px 15px 15px red, -15px 15px 15px red, -15px -15px 15px red,
+      15px -15px 15px red;
+    transform: translate(-50%, -50%);
+  }
+
+  80% {
+    top: 50%;
+    left: 50%;
+    box-shadow: 15px 15px 15px red, -15px 15px 15px red, -15px -15px 15px red,
+      15px -15px 15px red;
+    transform: translate(-50%, -50%);
+  }
+
+  100% {
+    top: -100%;
+    left: 200%;
+  }
+}
