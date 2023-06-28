@@ -45,6 +45,8 @@ function FormSign({ sign, closeModal }) {
 
     // closeModal();
 
+    setTimeout(closeModal, 10);
+
     if (signValue === 'signUp') {
       dispatch(register(userDataForRegister));
     } else {

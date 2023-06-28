@@ -29,8 +29,6 @@ const CardPage = () => {
   const myScores = useSelector(selectScoresByUser);
   const isLoading = useSelector(selectIsLoading);
 
-  console.log(isLoading);
-
   const dispatch = useDispatch();
 
   const reloadPage = () => {
