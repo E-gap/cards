@@ -1,7 +1,106 @@
 .animation {
+  position: absolute;
   height: 100px;
   width: 70px;
-  background-image: url(../../images/shirt.jpg);
-  background-size: cover;
   border-radius: 10px;
+  animation-name: place;
+  animation-duration: 10000ms;
+  animation-timing-function: linear;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+}
+
+@keyframes place {
+  0% {
+    top: 0%;
+    left: 0%;
+    background-image: url(../../images/shirt.jpg);
+    background-size: cover;
+    border: none;
+  }
+
+  10% {
+    top: 10%;
+    left: 10%;
+    rotate: 1 2 1 180deg;
+    background-color: yellow;
+    border: 2px solid green;
+    background-image: none;
+  }
+
+  20% {
+    top: 20%;
+    left: 20%;
+    rotate: 0 0 0 180deg;
+    background-image: url(../../images/shirt.jpg);
+    background-size: cover;
+    border: none;
+  }
+
+  30% {
+    top: 30%;
+    left: 30%;
+    rotate: 1 2 1 180deg;
+    background-image: none;
+    background-color: yellow;
+    border: 2px solid green;
+  }
+
+  40% {
+    top: 40%;
+    left: 40%;
+    rotate: 0 0 0 180deg;
+    background-image: url(../../images/shirt.jpg);
+    background-size: cover;
+    border: none;
+  }
+
+  50% {
+    top: 50%;
+    left: 50%;
+    rotate: 1 2 1 180deg;
+    background-image: none;
+    background-color: yellow;
+    border: 2px solid green;
+  }
+  60% {
+    top: 40%;
+    left: 40%;
+    rotate: 0 0 0 180deg;
+    background-image: url(../../images/shirt.jpg);
+    background-size: cover;
+    border: none;
+  }
+  70% {
+    top: 30%;
+    left: 30%;
+    rotate: 1 2 1 180deg;
+    background-image: none;
+    background-color: yellow;
+    border: 2px solid green;
+  }
+  80% {
+    top: 20%;
+    left: 20%;
+    rotate: 0 0 0 180deg;
+    background-image: url(../../images/shirt.jpg);
+    background-size: cover;
+    border: none;
+  }
+  90% {
+    top: 10%;
+    left: 10%;
+    rotate: 1 2 1 180deg;
+    background-image: none;
+    background-color: yellow;
+    border: 2px solid green;
+  }
+  100% {
+    top: 0%;
+    left: 0%;
+    rotate: 0 0 0 180deg;
+    background-image: url(../../images/shirt.jpg);
+    background-size: cover;
+    border: none;
+  }
 }

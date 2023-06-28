@@ -10,6 +10,7 @@
 }
 
 .container {
+  position: relative;
   max-width: 480px;
   height: 100%;
   margin-left: auto;
