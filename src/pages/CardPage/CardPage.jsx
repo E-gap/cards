@@ -18,6 +18,7 @@ import {
 } from '../../redux/selectors';
 import FormSign from '../../components/FormSign/FormSign';
 import { Scores } from '../../components/Scores/Scores';
+import { Preloader } from '../../components/Preloader/Preloader';
 
 const CardPage = () => {
   const [gameOver, setGameOver] = useState('');
@@ -75,6 +76,7 @@ const CardPage = () => {
   return (
     <div className={css.cardPage}>
       <div className={css.container}>
+        <Preloader />
         <Header handleHeaderButton={handleHeaderButton} />
         {isModalWindowOpen ? (
           <ModalWindow
@@ -128,7 +130,6 @@ const CardPage = () => {
           setTotalScore={setTotalScore}
           totalScore={totalScore}
         />
-
         {gameOver ? (
           <div className={css.gameOver}>
             <p>{gameOver}</p>
