@@ -5,9 +5,13 @@ import { RestrictedRoute } from '../src/utils/RestrictedRoute';
 import { useDispatch } from 'react-redux';
 import { refresh } from '../src/redux/auth/authOperations';
 import { useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import { selectIsLoading } from './redux/selectors';
 
 function App() {
   const dispatch = useDispatch();
+  const isLoading = useSelector(selectIsLoading);
+  console.log(isLoading);
 
   useEffect(() => {
     dispatch(refresh());

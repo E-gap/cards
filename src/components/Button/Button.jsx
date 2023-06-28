@@ -41,6 +41,10 @@ const Button = ({ text, handleButton, view }) => {
       style = css.sortByScore;
       break;
 
+    case 'back':
+      style = css.back;
+      break;
+
     default:
       style = '';
   }

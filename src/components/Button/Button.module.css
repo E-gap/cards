@@ -42,36 +42,6 @@ button {
   margin-right: var(--default-interval);
 }
 
-.loadMore {
-  background-color: aqua;
-  font-size: 14px;
-  min-width: 100px;
-  padding-top: 10px;
-  padding-bottom: 8px;
-}
-
-.loadMore:hover,
-.loadMore:focus {
-  background-color: chartreuse;
-}
-
-.back {
-  background-color: green;
-  font-size: 10px;
-  min-width: 60px;
-  padding-top: 8px;
-  padding-bottom: 6px;
-  margin-left: 50px;
-  color: #ffffff;
-  margin-right: 30px;
-}
-
-.back:hover,
-.back:focus {
-  background-color: yellow;
-  color: #000000;
-}
-
 .buttonQuestionSign {
   color: blue;
   background-color: greenyellow;

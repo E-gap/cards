@@ -1,7 +1,7 @@
 .header {
   margin-bottom: 10px;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   padding-top: 5px;
   padding-bottom: 5px;
   padding-left: 10px;

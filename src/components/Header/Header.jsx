@@ -6,6 +6,7 @@ import { selectIsLogin, selectUserName } from '../../redux/selectors';
 import { useDispatch } from 'react-redux';
 import { refresh } from '../../redux/auth/authOperations';
 import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Header = ({ handleHeaderButton }) => {
   const isLogin = useSelector(selectIsLogin);
@@ -16,8 +17,17 @@ const Header = ({ handleHeaderButton }) => {
     dispatch(refresh());
   }, [dispatch]);
 
+  const navigate = useNavigate();
+
+  const handleButton = () => {
+    navigate(-1);
+  };
+
   return (
     <header className={css.header}>
+      <div>
+        <Button text="Back" handleButton={handleButton} view="back" />
+      </div>
       {!isLogin ? (
         <div>
           <Button
@@ -25,6 +35,7 @@ const Header = ({ handleHeaderButton }) => {
             handleButton={handleHeaderButton}
             view="signIn"
           />
+
           <Button
             text="Sign Up"
             handleButton={handleHeaderButton}
