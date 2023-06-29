@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/cards/static/css/main.253083e3.css",
+    "main.css": "/cards/static/css/main.05852947.css",
     "main.js": "/cards/static/js/main.54484ba5.js",
     "static/js/787.de8d97fb.chunk.js": "/cards/static/js/787.de8d97fb.chunk.js",
     "static/media/Spinner-0.9s-200px.gif": "/cards/static/media/Spinner-0.9s-200px.97cc34cfc9ee0f031320.gif",
@@ -9,12 +9,12 @@
     "static/media/casino-background-design-gold.jpg": "/cards/static/media/casino-background-design-gold.0edd777feefa767eeb3c.jpg",
     "static/media/cards-blank-banner.jpg": "/cards/static/media/cards-blank-banner.ca3b7a70a073919f8c0f.jpg",
     "index.html": "/cards/index.html",
-    "main.253083e3.css.map": "/cards/static/css/main.253083e3.css.map",
+    "main.05852947.css.map": "/cards/static/css/main.05852947.css.map",
     "main.54484ba5.js.map": "/cards/static/js/main.54484ba5.js.map",
     "787.de8d97fb.chunk.js.map": "/cards/static/js/787.de8d97fb.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.253083e3.css",
+    "static/css/main.05852947.css",
     "static/js/main.54484ba5.js"
   ]
 }
