@@ -1,8 +1,8 @@
 .item {
   position: relative;
   flex-basis: calc((100% - 3 * 10px) / 4);
-  max-width: 50px;
-  height: 75px;
+  max-width: 60px;
+  height: 90px;
   transition: 0.1s ease-in-out;
   background-color: lightskyblue;
   border-radius: 10px;
