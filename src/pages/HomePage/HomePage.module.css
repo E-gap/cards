@@ -1,5 +1,5 @@
 .homePage {
-  background-image: url(../../images/black-casino-playing-card.jpg);
+  background-image: url(../../images/casino-cards-background-with-sparkles-lights.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   height: 100vh;
@@ -26,15 +26,40 @@
 }
 
 .moveToCards {
-  font-size: 18px;
-  color: yellow;
+  position: absolute;
+  font-size: 12px;
+
   font-weight: 600;
   text-decoration: none;
+  top: 10%;
+  left: 60%;
+  animation-name: border;
+  animation-duration: 500ms;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+  padding: 5px;
+  border-radius: 20px;
+  border: 2px;
+
+  @media screen and (min-width: 768px) {
+    font-size: 18px;
+  }
+}
+
+@keyframes border {
+  0% {
+    color: yellow;
+  }
+  100% {
+    color: lime;
+  }
 }
 
 .moveToCards:hover,
 .moveToCards:focus {
-  color: magenta;
+  scale: 1.2;
 }
 
 .card {
