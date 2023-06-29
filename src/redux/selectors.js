@@ -7,3 +7,5 @@ export const selectAllScores = state => state.score.allScores;
 export const selectScoresByUser = state => state.score.scoresByUser;
 
 export const selectIsUserLoading = state => state.auth.isLoading;
+
+export const selectIsScoreLoading = state => state.score.isLoading;

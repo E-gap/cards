@@ -28,15 +28,13 @@ const CardPage = () => {
   const isLogin = useSelector(selectIsLogin);
   const allScores = useSelector(selectAllScores);
   const myScores = useSelector(selectScoresByUser);
-  const isLoading = useSelector(selectIsUserLoading);
+  const isUserLoading = useSelector(selectIsUserLoading);
 
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(refresh());
   }, [dispatch]);
-
-  console.log(isLoading);
 
   const reloadPage = () => {
     window.location.reload();
@@ -81,7 +79,7 @@ const CardPage = () => {
 
   return (
     <>
-      {isLoading ? (
+      {isUserLoading ? (
         <Preloader />
       ) : (
         <div className={css.cardPage}>
