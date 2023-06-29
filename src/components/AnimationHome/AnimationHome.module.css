@@ -51,7 +51,7 @@
 
   100% {
     top: 79%;
-    left: 78%;
+    left: 75%;
     rotate: 1 2 1 180deg;
     background-image: url(../../images/bg30.jpg);
     background-color: yellow;
@@ -88,7 +88,7 @@
 
   100% {
     top: 20%;
-    left: 78%;
+    left: 75%;
     rotate: 1 2 1 180deg;
     background-image: url(../../images/bg60.jpg);
     background-color: yellow;
@@ -107,7 +107,7 @@
 
   33% {
     top: 30%;
-    left: 80%;
+    left: 75%;
     rotate: 1 2 1 180deg;
     background-color: yellow;
     border: 2px solid green;
@@ -125,7 +125,7 @@
 
   100% {
     top: 75%;
-    left: 78%;
+    left: 75%;
     rotate: 1 2 1 180deg;
     background-image: url(../../images/bg120.jpg);
     background-color: yellow;
