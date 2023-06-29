@@ -10,7 +10,7 @@
 }
 
 .highlight {
-  font-size: 10px;
+  font-size: var(--min-font-size);
   text-align: center;
   text-transform: uppercase;
   font-weight: 500;

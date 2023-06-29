@@ -1,5 +1,22 @@
 button {
+  cursor: pointer;
+  font-size: var(--min-font-size);
+  border: 2px solid var(--default-color);
+  background-color: aliceblue;
+  margin-bottom: 5px;
   border-radius: 5px;
+
+  @media screen and (min-width: 768px) {
+    font-size: var(--middle-font-size);
+  }
+}
+
+button:hover,
+button:focus {
+  background-color: darkgreen;
+  color: yellow;
+  border: 2px solid red;
+  outline: none;
 }
 
 .buttonNewGame {

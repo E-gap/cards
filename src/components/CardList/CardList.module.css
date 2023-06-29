@@ -1,6 +1,6 @@
 .cardList {
   width: 100%;
-  max-width: 480px;
+  max-width: 230px;
   display: flex;
   justify-content: space-between;
   list-style: none;
@@ -11,6 +11,6 @@
   gap: var(--default-interval);
 
   @media screen and (min-width: 768px) {
-    max-width: 230px;
+    max-width: 480px;
   }
 }

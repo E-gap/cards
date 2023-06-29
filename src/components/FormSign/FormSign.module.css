@@ -34,7 +34,7 @@
 }
 
 .question {
-  font-size: 10px;
+  font-size: var(--min-font-size);
   text-align: center;
   color: var(--default-color);
 }

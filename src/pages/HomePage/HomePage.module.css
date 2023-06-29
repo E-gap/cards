@@ -68,7 +68,7 @@
 .card {
   width: 230px;
   color: red;
-  font-size: 20px;
+  font-size: var(--max-font-size);
   font-weight: 600;
   background-color: greenyellow;
   border-radius: 10px;
