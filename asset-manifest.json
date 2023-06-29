@@ -1,17 +1,19 @@
 {
   "files": {
-    "main.css": "/cards/static/css/main.f0a0fe74.css",
+    "main.css": "/cards/static/css/main.e31b5d9c.css",
     "main.js": "/cards/static/js/main.8e54225f.js",
     "static/js/787.de8d97fb.chunk.js": "/cards/static/js/787.de8d97fb.chunk.js",
     "static/media/Spinner-0.9s-200px.gif": "/cards/static/media/Spinner-0.9s-200px.97cc34cfc9ee0f031320.gif",
     "static/media/shirt.jpg": "/cards/static/media/shirt.1bb7c1ac894b1ac3f663.jpg",
+    "static/media/black-casino-playing-card.jpg": "/cards/static/media/black-casino-playing-card.519b21bf9e0c761cc8cf.jpg",
+    "static/media/casino-background-design-gold.jpg": "/cards/static/media/casino-background-design-gold.0edd777feefa767eeb3c.jpg",
     "index.html": "/cards/index.html",
-    "main.f0a0fe74.css.map": "/cards/static/css/main.f0a0fe74.css.map",
+    "main.e31b5d9c.css.map": "/cards/static/css/main.e31b5d9c.css.map",
     "main.8e54225f.js.map": "/cards/static/js/main.8e54225f.js.map",
     "787.de8d97fb.chunk.js.map": "/cards/static/js/787.de8d97fb.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f0a0fe74.css",
+    "static/css/main.e31b5d9c.css",
     "static/js/main.8e54225f.js"
   ]
 }
