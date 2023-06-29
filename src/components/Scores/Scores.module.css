@@ -38,6 +38,8 @@
 
 .scoresHistory thead {
   background-color: aqua;
+  position: sticky;
+  top: 0;
 }
 
 .scoresHistory td,
