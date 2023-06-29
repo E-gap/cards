@@ -23,7 +23,7 @@ function FormSign({ sign, closeModal }) {
         ? Yup.string().required('Please input name')
         : Yup.string(),
     email: Yup.string().required('Please input email'),
-    password: Yup.string().required(),
+    password: Yup.string().required('Please input password'),
     confirmPassword: Yup.string().oneOf(
       [Yup.ref('password'), null],
       'Passwords must match'
@@ -93,19 +93,34 @@ function FormSign({ sign, closeModal }) {
             <label className={css.label}>
               Name
               <Field name="name" />
-              <ErrorMessage name="name" component="div" />
+              <ErrorMessage
+                name="name"
+                render={message => (
+                  <div className={css.errorValidation}>{message}</div>
+                )}
+              />
             </label>
           )}
           <label className={css.label}>
             E-mail
             <Field name="email" />
-            <ErrorMessage name="email" component="div" />
+            <ErrorMessage
+              name="email"
+              render={message => (
+                <div className={css.errorValidation}>{message}</div>
+              )}
+            />
           </label>
           <label className={css.label}>
             Password
             <Field type={typePassword} name="password" />
             <BiShow className={css.buttonHide} onClick={toggleShowPassword} />
-            <ErrorMessage name="password" component="div" />
+            <ErrorMessage
+              name="password"
+              render={message => (
+                <div className={css.errorValidation}>{message}</div>
+              )}
+            />
           </label>
           {signValue === 'signUp' && (
             <label className={css.label}>
@@ -115,7 +130,14 @@ function FormSign({ sign, closeModal }) {
                 className={css.buttonHide}
                 onClick={toggleShowConfirmPassword}
               />
-              <ErrorMessage name="confirmPassword" component="div" />
+              <ErrorMessage
+                name="confirmPassword"
+                render={message => (
+                  <div className={css.errorValidation}>
+                    Passwords must match
+                  </div>
+                )}
+              />
             </label>
           )}
           <button type="submit" className={css.submit}>

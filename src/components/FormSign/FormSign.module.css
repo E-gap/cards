@@ -14,6 +14,7 @@
   position: relative;
   font-size: 12px;
   font-weight: 500;
+  color: goldenrod;
 }
 
 .submit {
@@ -35,5 +36,9 @@
 .question {
   font-size: 10px;
   text-align: center;
-  color: blue;
+  color: goldenrod;
+}
+
+.errorValidation {
+  color: red;
 }

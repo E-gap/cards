@@ -14,15 +14,17 @@
   position: relative;
   border-radius: 10px;
   width: 300px;
-  background-color: greenyellow;
   padding-bottom: 5px;
+  background-image: url(../../images/cards-blank-banner.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .closeModalIcon {
   position: absolute;
   top: 5px;
   right: 5px;
-  color: blue;
+  color: goldenrod;
 }
 
 .closeModalIcon:hover,

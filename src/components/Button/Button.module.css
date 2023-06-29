@@ -43,8 +43,8 @@ button {
 }
 
 .buttonQuestionSign {
-  color: blue;
-  background-color: greenyellow;
+  color: goldenrod;
+  background-color: transparent;
   border: none;
   text-decoration: underline;
   font-weight: 700;
@@ -53,6 +53,6 @@ button {
 .buttonQuestionSign:hover,
 .buttonQuestionSign:focus {
   border: none;
-  background-color: greenyellow;
-  color: brown;
+  background-color: transparent;
+  color: purple;
 }
