@@ -7,8 +7,6 @@ export const Preloader = ({ sign }) => {
     ? `${css.scoresPreloader}`
     : `${css.cardPagePreloader}`;
 
-  console.log(style);
-
   return (
     <div>
       <div className={style}>

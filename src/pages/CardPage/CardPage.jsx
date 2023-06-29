@@ -21,6 +21,7 @@ import { Scores } from '../../components/Scores/Scores';
 import { Preloader } from '../../components/Preloader/Preloader';
 
 const CardPage = () => {
+  const [key, setKey] = useState(0);
   const [gameOver, setGameOver] = useState('');
   const [totalScore, setTotalScore] = useState(0);
   const [isModalWindowOpen, setIsModalWindowOpen] = useState(false);
@@ -37,7 +38,9 @@ const CardPage = () => {
   }, [dispatch]);
 
   const reloadPage = () => {
-    window.location.reload();
+    setTotalScore(0);
+    setGameOver('');
+    setKey(Math.random());
   };
 
   const onKeyDown = e => {
@@ -140,6 +143,7 @@ const CardPage = () => {
               </p>
             )}
             <CardList
+              key={key}
               setGameOver={setGameOver}
               gameOver={gameOver}
               setTotalScore={setTotalScore}
