@@ -6,6 +6,4 @@ export const selectAllScores = state => state.score.allScores;
 
 export const selectScoresByUser = state => state.score.scoresByUser;
 
-export const selectIsLoading = state => {
-  return state.auth.isLoading || state.score.isLoading;
-};
+export const selectIsUserLoading = state => state.auth.isLoading;

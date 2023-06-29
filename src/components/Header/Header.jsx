@@ -3,19 +3,11 @@ import css from './Header.module.css';
 import Button from '../Button/Button';
 import { useSelector } from 'react-redux';
 import { selectIsLogin, selectUserName } from '../../redux/selectors';
-import { useDispatch } from 'react-redux';
-import { refresh } from '../../redux/auth/authOperations';
-import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const Header = ({ handleHeaderButton }) => {
   const isLogin = useSelector(selectIsLogin);
   const userName = useSelector(selectUserName);
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(refresh());
-  }, [dispatch]);
 
   const navigate = useNavigate();
 
@@ -24,35 +16,37 @@ const Header = ({ handleHeaderButton }) => {
   };
 
   return (
-    <header className={css.header}>
-      <div>
-        <Button text="Back" handleButton={handleButton} view="back" />
-      </div>
-      {!isLogin ? (
+    <>
+      <header className={css.header}>
         <div>
-          <Button
-            text="Sign In"
-            handleButton={handleHeaderButton}
-            view="signIn"
-          />
+          <Button text="Back" handleButton={handleButton} view="back" />
+        </div>
+        {!isLogin ? (
+          <div>
+            <Button
+              text="Sign In"
+              handleButton={handleHeaderButton}
+              view="signIn"
+            />
 
-          <Button
-            text="Sign Up"
-            handleButton={handleHeaderButton}
-            view="signUp"
-          />
-        </div>
-      ) : (
-        <div>
-          <p className={css.userName}>user: {userName}</p>
-          <Button
-            text="Log out"
-            handleButton={handleHeaderButton}
-            view="logOut"
-          />
-        </div>
-      )}
-    </header>
+            <Button
+              text="Sign Up"
+              handleButton={handleHeaderButton}
+              view="signUp"
+            />
+          </div>
+        ) : (
+          <div>
+            <p className={css.userName}>user: {userName}</p>
+            <Button
+              text="Log out"
+              handleButton={handleHeaderButton}
+              view="logOut"
+            />
+          </div>
+        )}
+      </header>
+    </>
   );
 };
 

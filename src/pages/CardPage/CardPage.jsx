@@ -3,9 +3,9 @@ import Button from '../../components/Button/Button';
 import CardList from '../../components/CardList/CardList';
 import Header from '../../components/Header/Header';
 import { ModalWindow } from '../../components/ModalWindow/ModalWindow';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { logout } from '../../redux/auth/authOperations';
+import { logout, refresh } from '../../redux/auth/authOperations';
 import {
   getAllScores,
   getUserScores,
@@ -14,7 +14,7 @@ import {
   selectIsLogin,
   selectAllScores,
   selectScoresByUser,
-  /* selectIsLoading, */
+  selectIsUserLoading,
 } from '../../redux/selectors';
 import FormSign from '../../components/FormSign/FormSign';
 import { Scores } from '../../components/Scores/Scores';
@@ -28,9 +28,15 @@ const CardPage = () => {
   const isLogin = useSelector(selectIsLogin);
   const allScores = useSelector(selectAllScores);
   const myScores = useSelector(selectScoresByUser);
-  // const isLoading = useSelector(selectIsLoading);
+  const isLoading = useSelector(selectIsUserLoading);
 
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(refresh());
+  }, [dispatch]);
+
+  console.log(isLoading);
 
   const reloadPage = () => {
     window.location.reload();
@@ -74,72 +80,85 @@ const CardPage = () => {
   };
 
   return (
-    <div className={css.cardPage}>
-      <div className={css.container}>
+    <>
+      {isLoading ? (
         <Preloader />
-        <Header handleHeaderButton={handleHeaderButton} />
-        {isModalWindowOpen ? (
-          <ModalWindow
-            onKeyDown={onKeyDown}
-            setIsModalWindowOpen={setIsModalWindowOpen}
-          >
-            {sign.includes('sign') && (
-              <FormSign sign={sign} closeModal={closeModal} />
+      ) : (
+        <div className={css.cardPage}>
+          <div className={css.container}>
+            <Header handleHeaderButton={handleHeaderButton} />
+            {isModalWindowOpen ? (
+              <ModalWindow
+                onKeyDown={onKeyDown}
+                setIsModalWindowOpen={setIsModalWindowOpen}
+              >
+                {sign.includes('sign') && (
+                  <FormSign sign={sign} closeModal={closeModal} />
+                )}
+                {sign === 'allScores' && (
+                  <Scores
+                    sign={sign}
+                    closeModal={closeModal}
+                    scores={allScores}
+                  />
+                )}
+                {sign === 'myScores' && (
+                  <Scores
+                    sign={sign}
+                    closeModal={closeModal}
+                    scores={myScores}
+                  />
+                )}
+              </ModalWindow>
+            ) : (
+              ''
             )}
-            {sign === 'allScores' && (
-              <Scores sign={sign} closeModal={closeModal} scores={allScores} />
-            )}
-            {sign === 'myScores' && (
-              <Scores sign={sign} closeModal={closeModal} scores={myScores} />
-            )}
-          </ModalWindow>
-        ) : (
-          ''
-        )}
-        <Button
-          text="Start New Game"
-          handleButton={reloadPage}
-          view="buttonNewGame"
-        />
-        {isLogin ? (
-          <div className={css.buttonsShowResults}>
             <Button
-              text="Show all Scores"
-              handleButton={showScores}
-              view="buttonShowAllScores"
+              text="Start New Game"
+              handleButton={reloadPage}
+              view="buttonNewGame"
             />
-            <Button
-              text="Show my Scores"
-              handleButton={showScores}
-              view="buttonShowMyScores"
+            {isLogin ? (
+              <div className={css.buttonsShowResults}>
+                <Button
+                  text="Show all Scores"
+                  handleButton={showScores}
+                  view="buttonShowAllScores"
+                />
+                <Button
+                  text="Show my Scores"
+                  handleButton={showScores}
+                  view="buttonShowMyScores"
+                />
+              </div>
+            ) : (
+              ''
+            )}
+            {!gameOver ? (
+              <p className={css.totalScore}>Your current score: {totalScore}</p>
+            ) : (
+              <p className={css.totalScore} style={{ visibility: 'hidden' }}>
+                Your current score: {totalScore}
+              </p>
+            )}
+            <CardList
+              setGameOver={setGameOver}
+              gameOver={gameOver}
+              setTotalScore={setTotalScore}
+              totalScore={totalScore}
             />
+            {gameOver ? (
+              <div className={css.gameOver}>
+                <p>{gameOver}</p>
+                <p className={css.finalScore}>Your final score: {totalScore}</p>
+              </div>
+            ) : (
+              ''
+            )}
           </div>
-        ) : (
-          ''
-        )}
-        {!gameOver ? (
-          <p className={css.totalScore}>Your current score: {totalScore}</p>
-        ) : (
-          <p className={css.totalScore} style={{ visibility: 'hidden' }}>
-            Your current score: {totalScore}
-          </p>
-        )}
-        <CardList
-          setGameOver={setGameOver}
-          gameOver={gameOver}
-          setTotalScore={setTotalScore}
-          totalScore={totalScore}
-        />
-        {gameOver ? (
-          <div className={css.gameOver}>
-            <p>{gameOver}</p>
-            <p className={css.finalScore}>Your final score: {totalScore}</p>
-          </div>
-        ) : (
-          ''
-        )}
-      </div>
-    </div>
+        </div>
+      )}
+    </>
   );
 };
 
