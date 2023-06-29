@@ -8,11 +8,13 @@ const authSlice = createSlice({
     token: null,
     isLogin: false,
     isLoading: false,
+    error: '',
   },
   extraReducers: builder =>
     builder
       .addCase(register.pending, state => {
         state.isLoading = true;
+        state.error = '';
       })
       .addCase(register.fulfilled, (state, action) => {
         state.user = action.payload.user;
@@ -20,11 +22,13 @@ const authSlice = createSlice({
         state.isLogin = true;
         state.isLoading = false;
       })
-      .addCase(register.rejected, state => {
+      .addCase(register.rejected, (state, action) => {
         state.isLoading = false;
+        state.error = action.payload;
       })
       .addCase(login.pending, state => {
         state.isLoading = true;
+        state.error = '';
       })
       .addCase(login.fulfilled, (state, action) => {
         state.user = action.payload.user;
@@ -32,11 +36,13 @@ const authSlice = createSlice({
         state.isLogin = true;
         state.isLoading = false;
       })
-      .addCase(login.rejected, state => {
+      .addCase(login.rejected, (state, action) => {
         state.isLoading = false;
+        state.error = action.payload;
       })
       .addCase(logout.pending, state => {
         state.isLoading = true;
+        state.error = '';
       })
       .addCase(logout.fulfilled, state => {
         state.user = { name: null, email: null };
@@ -44,18 +50,20 @@ const authSlice = createSlice({
         state.isLogin = false;
         state.isLoading = false;
       })
-      .addCase(logout.rejected, state => {
+      .addCase(logout.rejected, (state, action) => {
         state.isLoading = false;
+        state.error = action.payload;
       })
       .addCase(refresh.pending, state => {
         state.isLoading = true;
+        state.error = '';
       })
       .addCase(refresh.fulfilled, (state, action) => {
         state.user = action.payload.user;
         state.isLogin = true;
         state.isLoading = false;
       })
-      .addCase(refresh.rejected, state => {
+      .addCase(refresh.rejected, (state, action) => {
         state.isLoading = false;
       }),
 });

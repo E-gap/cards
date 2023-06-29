@@ -1,10 +1,11 @@
 import PropTypes from 'prop-types';
 import ItemCard from '../../components/ItemCard/ItemCard';
 import { useState, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { addScore } from '../../redux/scores/scoresOperations';
 import { cardsFromBackend } from './cardsFromBackend';
 import moment from 'moment';
+import { selectIsLogin } from '../../redux/selectors';
 import css from './CardList.module.css';
 
 const CardList = ({ setGameOver, gameOver, setTotalScore, totalScore }) => {
@@ -14,6 +15,9 @@ const CardList = ({ setGameOver, gameOver, setTotalScore, totalScore }) => {
   });
   const [id, setId] = useState('');
   const dispatch = useDispatch();
+
+  const isLogin = useSelector(selectIsLogin);
+
   useEffect(() => {
     const changeCard = id => {
       const quantityShowedCards = cards.filter(card => card.isShowed === true);
@@ -27,7 +31,9 @@ const CardList = ({ setGameOver, gameOver, setTotalScore, totalScore }) => {
           score: totalScore,
           date: moment().format('DD.MM.YYYY hh:mm:ss'),
         };
-        dispatch(addScore(resultGame));
+        if (isLogin) {
+          dispatch(addScore(resultGame));
+        }
       }
 
       const cardsAfterSelect = cards.map((card, index) => {

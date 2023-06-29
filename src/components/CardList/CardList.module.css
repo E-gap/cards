@@ -9,6 +9,7 @@
   margin-left: auto;
   margin-right: auto;
   gap: var(--default-interval);
+  margin-bottom: var(--default-interval);
 
   @media screen and (min-width: 768px) {
     max-width: 468px;

@@ -15,6 +15,7 @@ import {
   selectAllScores,
   selectScoresByUser,
   selectIsUserLoading,
+  selectError,
 } from '../../redux/selectors';
 import FormSign from '../../components/FormSign/FormSign';
 import { Scores } from '../../components/Scores/Scores';
@@ -30,6 +31,7 @@ const CardPage = () => {
   const allScores = useSelector(selectAllScores);
   const myScores = useSelector(selectScoresByUser);
   const isUserLoading = useSelector(selectIsUserLoading);
+  const error = useSelector(selectError);
 
   const dispatch = useDispatch();
 
@@ -149,13 +151,16 @@ const CardPage = () => {
               setTotalScore={setTotalScore}
               totalScore={totalScore}
             />
-            {gameOver ? (
+            {gameOver && (
               <div className={css.gameOver}>
                 <p>{gameOver}</p>
                 <p className={css.finalScore}>Your final score: {totalScore}</p>
               </div>
-            ) : (
-              ''
+            )}
+            {error && (
+              <div className={css.error}>
+                <p className={css.errorMessage}>Error: {error}</p>
+              </div>
             )}
           </div>
         </div>
