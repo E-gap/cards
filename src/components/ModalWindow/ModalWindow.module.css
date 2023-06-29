@@ -18,6 +18,10 @@
   background-image: url(../../images/cards-blank-banner.jpg);
   background-size: cover;
   background-repeat: no-repeat;
+
+  @media screen and (min-width: 768px) {
+    width: 400px;
+  }
 }
 
 .closeModalIcon {

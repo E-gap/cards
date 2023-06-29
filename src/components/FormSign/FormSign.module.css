@@ -15,6 +15,10 @@
   font-size: 12px;
   font-weight: 500;
   color: var(--default-color);
+
+  @media screen and (min-width: 768px) {
+    font-size: var(--middle-font-size);
+  }
 }
 
 .submit {
@@ -27,6 +31,11 @@
   position: absolute;
   top: 20px;
   right: 5px;
+
+  @media screen and (min-width: 768px) {
+    top: 23px;
+    right: 5px;
+  }
 }
 
 .buttonHide:hover {
@@ -37,6 +46,10 @@
   font-size: var(--min-font-size);
   text-align: center;
   color: var(--default-color);
+
+  @media screen and (min-width: 768px) {
+    font-size: var(--middle-font-size);
+  }
 }
 
 .errorValidation {
