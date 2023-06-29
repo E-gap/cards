@@ -43,7 +43,7 @@ button {
 }
 
 .buttonQuestionSign {
-  color: goldenrod;
+  color: var(--default-color);
   background-color: transparent;
   border: none;
   text-decoration: underline;

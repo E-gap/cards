@@ -10,11 +10,11 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  margin-bottom: 10px;
+  margin-bottom: var(--default-interval);
   position: relative;
   font-size: 12px;
   font-weight: 500;
-  color: goldenrod;
+  color: var(--default-color);
 }
 
 .submit {
@@ -36,7 +36,7 @@
 .question {
   font-size: 10px;
   text-align: center;
-  color: goldenrod;
+  color: var(--default-color);
 }
 
 .errorValidation {

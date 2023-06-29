@@ -1,5 +1,6 @@
 :root {
   --default-interval: 10px;
+  --default-color: goldenrod;
 }
 
 body {

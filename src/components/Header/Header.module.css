@@ -1,5 +1,5 @@
 .header {
-  margin-bottom: 10px;
+  margin-bottom: var(--default-interval);
   display: flex;
   justify-content: space-between;
   padding-top: 5px;
@@ -11,7 +11,7 @@
 .userName {
   display: inline;
   font-size: 15px;
-  color: goldenrod;
+  color: var(--default-color);
   font-weight: 700;
-  margin-right: 10px;
+  margin-right: var(--default-interval);
 }
