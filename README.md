@@ -36,44 +36,42 @@ automatically is being saved saved to the score history (if user Signed In).
 ![Final user's score](./assets/final-score.jpg)
 
 After click on button `«Start New Game»`
-[Start New Game](./assets/start-new-game.jpg) user can start new game.
+![Start New Game](./assets/start-new-game.jpg) user can start new game.
 
-Якщо ми стаєм підписником користувача, то в його картці збільшується кількість
-підписників на 1. Якщо відписуємся від користувача - то в його картці
-зменшується кількість підписників на 1.
+Also on the page `«Cards»` in left high corner exists button `«BACK»` that user
+can click on and return to the page `«Home»`.
 
-Також на сторінці [Tweets](https://e-gap.github.io/tweets-pr/tweets) у лівому
-верхньому куті є кнопка `«BACK»`, ![BUTTON BACK](./assets/button-back.jpg)
-натиснувши на яку, ми переходимо на сторінку
-[Home](https://e-gap.github.io/tweets-pr/).
+On the page `«Cards»` Signed In user can see general or his own score history.
+For this he must click on button `«Show all Scores»` or `«Show my Scores»`
+accordingly.
 
-На сторінці [Tweets](https://e-gap.github.io/tweets-pr/tweets) ми можемо
-управляти виведенням на екран користувачів однієї з доступних нам категорій:
-`«Shaw all»` (користувачі усіх категорій) `«Follow»` (користувачі, підписниками
-яких ми не є) `«Followings»` (користувачі, підписниками яких ми є) за допомогою
-фільтра: ![BUTTON FILTER](./assets/button-filter.jpg) Після обрання у фільтрі
-потрібної категорії - на сторніці з'являться тыльки картки користувачів обраної
-категорії.
+User can also sort score history by date or score by clicking on buttons
+`«Sort by Date»` or `«Sort by Score»` accordingly.
 
-По замовчуванню на сторінці [Tweets](https://e-gap.github.io/tweets-pr/tweets)
-відображається до трьох карток користувачів однієї категорії. Якщо в базі даних
-користувачів обраної категорії більше, ніж ми бачимо на екрані, ми можемо
-натиснути кнопку `«LOAD MORE»`
-![BUTTON LOAD MORE](./assets/button-load-more.jpg) і тоді на екрані до вже
-видимих на екрані користувачів додадуться ще слідуючі (три, а бо менше). Якщо в
-базі даних кількість користувачів дорівнює кількості, яку ми вже бачимо на
-екрані, тоді кнопка `«LOAD MORE»` перестає відображатися на екрані.
+![Show history](./assets/show-history.jpg)
 
-Якщо у нас сталася помилка і нам не доступні користувачі із бази даних, тоді на
-екрані з'явиться текст помилки: ![ERROR](./assets/error.jpg)
+User can scroll down the list of scores.
 
-Якщо кількість користувачів обраної категорії в базі даних дорівнює 0Ю то на
-екрані з'явиться текст повідомлення: ![NO USERS](./assets/no-users.jpg)
+User can face with different errors during using application. On page `«Cards»`
+error will be showed at the bottom of the page.
+
+![Error on the Card page](./assets/error-card-page.jpg)
+
+Error of loading of the score history will be showed at the middle of the
+history window.
+
+![Error of loading history](./assets/error-history.jpg)
 
 ---
 
-## **_Використані бібліотеки для створення застосунку_**
+## **_Udsed frameworks for creating application_**
 
 [axios](https://axios-http.com/)
 [prop-types](https://github.com/facebook/prop-types)
+[Formik](https://formik.org/)
 [react-router-dom](https://github.com/remix-run/react-router)
+[Moment.js](https://momentjs.com/)
+[react-icons](https://github.com/react-icons/react-icons)
+[React Redux](https://github.com/reduxjs/react-redux)
+[React Persist](https://github.com/rt2zz/redux-persist)
+[Yup](https://github.com/jquense/yup)
