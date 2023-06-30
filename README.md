@@ -10,10 +10,10 @@ This application is made with
 App link -
 [https://cards-fawn-nine.vercel.app/](https://cards-fawn-nine.vercel.app/)
 
-App is as a simple game, where user can choose cards and score points. After
-Sign In user can save his score avtomatically after each game. He can view score
-history every user ant his own history as well. User can sort score history by
-date and by user as well.
+App is a game, where user can choose cards and score points. After Sign In user
+can save his score automatically after each game. He can view score history
+every user ant his own history as well. User can sort score history by date and
+by user as well.
 
 App consists of two pages: [Home](https://cards-fawn-nine.vercel.app/) and
 [Cards](https://cards-fawn-nine.vercel.app/cards).
