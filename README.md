@@ -14,27 +14,29 @@ Sign In user can save his score avtomatically after each game. He can view score
 history every user ant his own history as well. User can sort score history by
 date and by user as well.
 
-Застосунок складається з двох сторінок: [Home](https://e-gap.github.io/cards/)
-та [Cards](https://e-gap.github.io/cards/cards).
+App consists of two pages: [Home](https://e-gap.github.io/cards/) and
+[Cards](https://e-gap.github.io/cards/cards).
 
-На сторінці [Home](https://e-gap.github.io/tweets-pr/) ми можемо бачити загальне
-оформлення стартової сторінки застосунку із кнопкою `«Go to Tweets»`, натиснувши
-яку, можна перейти до сторінки
-[Tweets](https://e-gap.github.io/tweets-pr/tweets).
+On the page [Home](https://e-gap.github.io/cards/) we can see general decoration
+of Home page with animation. Also on Home page is button `«Go to Cards»` that we
+can click on and go to the page [Cards](https://e-gap.github.io/cards/cards).
 
 ![Home page of app](./assets/home-page.jpg)
 
-Сторінка [Tweets](https://e-gap.github.io/tweets-pr/tweets) має наступний
-вигляд:
+Page [Cards](https://e-gap.github.io/cards/cards) looks like this:
 
-![Tweets page of app](./assets/tweets-page.jpg)
+![Card page of app](./assets/card-page.jpg)
 
-На цій сторінці ми можемо бачити користвачів з інформацією по ним. У кожного
-користувача є картка із аватаркою та вказанням кількості твітів і підписників.
-Якщо ми хочемо стати підписником (або перестати бути) підписником конкретного
-користувача, нам слід натичнути кнопку `«FOLLOW»`
-![BUTTON FOLLOW](./assets/button-follow.jpg) (або `«FOLLOWING»`)
-![BUTTON FOLLOWING](./assets/button-following.jpg)
+On this page user can play the game. User chooses a card and click on it. After
+this user's action card turns and user can see score. This score adds to current
+user's score. After choosing three cards the game is over and user can see his
+final score a few seconds. After few seconds final score disappears and
+automatically is being saved saved to the score history (if user Signed In).
+
+![Final user's score](./assets/final-score.jpg)
+
+After click on button `«Start New Game»`
+[Start New Game](./assets/start-new-game.jpg) user can start new game.
 
 Якщо ми стаєм підписником користувача, то в його картці збільшується кількість
 підписників на 1. Якщо відписуємся від користувача - то в його картці
