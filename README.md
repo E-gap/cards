@@ -38,7 +38,7 @@ automatically is being saved saved to the score history (if user Signed In).
 After click on button `«Start New Game»`
 ![Start New Game](./assets/start-new-game.jpg) user can start new game.
 
-Also on the page `«Cards»` in left high corner exists button `«BACK»` that user
+Also on the page `«Cards»` in left high corner exists button `«Back»` that user
 can click on and return to the page `«Home»`.
 
 On the page `«Cards»` Signed In user can see general or his own score history.
@@ -64,7 +64,7 @@ history window.
 
 ---
 
-## **_Udsed frameworks for creating application_**
+## **_Udsed frameworks for creating this application_**
 
 [axios](https://axios-http.com/)
 [prop-types](https://github.com/facebook/prop-types)
