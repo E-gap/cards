@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
-import { selectIsScoreLoading, selectError } from 'redux/selectors';
+import { selectIsScoreLoading, selectScoreError } from 'redux/selectors';
 import css from './Scores.module.css';
 import Button from '../Button/Button';
 import { useState, useEffect } from 'react';
@@ -13,7 +13,7 @@ export const Scores = ({ sign, scores }) => {
   });
 
   const isLoading = useSelector(selectIsScoreLoading);
-  const error = useSelector(selectError);
+  const error = useSelector(selectScoreError);
 
   useEffect(() => {
     setFinalScores(scores);

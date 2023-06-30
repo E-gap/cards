@@ -10,6 +10,6 @@ export const selectIsUserLoading = state => state.auth.isLoading;
 
 export const selectIsScoreLoading = state => state.score.isLoading;
 
-export const selectError = state => {
-  return state.auth.error || state.score.error;
-};
+export const selectAuthError = state => state.auth.error;
+
+export const selectScoreError = state => state.score.error;

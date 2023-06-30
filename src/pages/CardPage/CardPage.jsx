@@ -16,7 +16,7 @@ import {
   selectAllScores,
   selectScoresByUser,
   selectIsUserLoading,
-  selectError,
+  selectAuthError,
 } from '../../redux/selectors';
 import FormSign from '../../components/FormSign/FormSign';
 import { Scores } from '../../components/Scores/Scores';
@@ -32,7 +32,7 @@ const CardPage = () => {
   const allScores = useSelector(selectAllScores);
   const myScores = useSelector(selectScoresByUser);
   const isUserLoading = useSelector(selectIsUserLoading);
-  const error = useSelector(selectError);
+  const error = useSelector(selectAuthError);
 
   const dispatch = useDispatch();
 
