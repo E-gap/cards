@@ -1,8 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-// import axios from 'axios';
 import { instance } from '../auth/authOperations';
-
-// axios.defaults.baseURL = 'http://localhost:3001/api';
 
 export const getAllScores = createAsyncThunk(
   'scores/getAllScores',

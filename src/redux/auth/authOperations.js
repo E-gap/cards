@@ -1,13 +1,9 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-// axios.defaults.baseURL = 'https://cards-backend-98c7.onrender.com/api';
-
 export const instance = axios.create({
   baseURL: process.env.REACT_APP_API_URL,
 });
-
-// axios.defaults.baseURL = 'http://localhost:3001/api';
 
 export const register = createAsyncThunk(
   'auth/register',
