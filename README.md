@@ -1,13 +1,13 @@
-# **_Tweet-pr_**
+# **_Cards_**
 
-Цей застосунок створений за допомогою  
+This application is made with  
 [Create React App](https://github.com/facebook/create-react-app).
 
 ---
 
-## **_Опис роботи застосунку_**
+## **_Description application_**
 
-Адреса застосунку - [e-gap.github.io/tweets-pr/](e-gap.github.io/tweets-pr/)
+App link - [e-gap.github.io/cards/](e-gap.github.io/cards/)
 
 Застосунок створений для можливості дізнатися, які користувачі створюють твіти,
 скільки твітів у кожного користувача, та підписатися на твіти користувачів.
