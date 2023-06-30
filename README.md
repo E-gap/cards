@@ -9,8 +9,10 @@ This application is made with
 
 App link - [e-gap.github.io/cards/](e-gap.github.io/cards/)
 
-Застосунок створений для можливості дізнатися, які користувачі створюють твіти,
-скільки твітів у кожного користувача, та підписатися на твіти користувачів.
+App is as a simple game, where user can choose cards and score points. After
+Sign In user can save his score avtomatically after each game. He can view score
+history every user ant his own history as well. User can sort score history by
+date and by user as well.
 
 Застосунок складається з двох сторінок:
 [Home](https://e-gap.github.io/tweets-pr/) та
