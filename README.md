@@ -14,9 +14,8 @@ Sign In user can save his score avtomatically after each game. He can view score
 history every user ant his own history as well. User can sort score history by
 date and by user as well.
 
-Застосунок складається з двох сторінок:
-[Home](https://e-gap.github.io/tweets-pr/) та
-[Tweets](https://e-gap.github.io/tweets-pr/tweets).
+Застосунок складається з двох сторінок: [Home](https://e-gap.github.io/cards/)
+та [Cards](https://e-gap.github.io/cards/cards).
 
 На сторінці [Home](https://e-gap.github.io/tweets-pr/) ми можемо бачити загальне
 оформлення стартової сторінки застосунку із кнопкою `«Go to Tweets»`, натиснувши
