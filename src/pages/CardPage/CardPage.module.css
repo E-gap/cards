@@ -80,23 +80,6 @@
   }
 }
 
-.error {
-  background-color: yellow;
-  width: 400px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 10px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.errorMessage {
-  color: red;
-  font-size: 15px;
-  font-weight: 700;
-}
-
 .totalScore {
   color: var(--default-color);
   font-weight: 500;

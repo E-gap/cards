@@ -3,6 +3,7 @@ import Button from '../../components/Button/Button';
 import CardList from '../../components/CardList/CardList';
 import Header from '../../components/Header/Header';
 import { ModalWindow } from '../../components/ModalWindow/ModalWindow';
+import ErrorComponent from '../../components/ErrorComponent/ErrorComponent';
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { logout, refresh } from '../../redux/auth/authOperations';
@@ -157,11 +158,7 @@ const CardPage = () => {
                 <p className={css.finalScore}>Your final score: {totalScore}</p>
               </div>
             )}
-            {error && (
-              <div className={css.error}>
-                <p className={css.errorMessage}>Error: {error}</p>
-              </div>
-            )}
+            {error && <ErrorComponent text={error} />}
           </div>
         </div>
       )}

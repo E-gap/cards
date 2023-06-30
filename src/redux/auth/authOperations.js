@@ -44,7 +44,10 @@ export const logout = createAsyncThunk('auth/logout', async (_, thunkApi) => {
 
 export const refresh = createAsyncThunk('auth/current', async (_, thunkApi) => {
   const { token } = thunkApi.getState().auth;
-  if (!token) return thunkApi.rejectWithValue('No valid token');
+  if (!token)
+    return thunkApi.rejectWithValue(
+      'Sign In if you want to save your score history'
+    );
   axios.defaults.headers.common.Authorization = `Bearer ${token}`;
   try {
     const { data } = await axios.get('/users/current');

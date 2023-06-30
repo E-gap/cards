@@ -1,10 +1,11 @@
 import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
-import { selectIsScoreLoading } from 'redux/selectors';
+import { selectIsScoreLoading, selectError } from 'redux/selectors';
 import css from './Scores.module.css';
 import Button from '../Button/Button';
 import { useState, useEffect } from 'react';
 import { Preloader } from '../Preloader/Preloader';
+import ErrorComponent from '../ErrorComponent/ErrorComponent';
 
 export const Scores = ({ sign, scores }) => {
   const [finalScores, setFinalScores] = useState(() => {
@@ -12,6 +13,7 @@ export const Scores = ({ sign, scores }) => {
   });
 
   const isLoading = useSelector(selectIsScoreLoading);
+  const error = useSelector(selectError);
 
   useEffect(() => {
     setFinalScores(scores);
@@ -48,36 +50,40 @@ export const Scores = ({ sign, scores }) => {
               view="sortByScore"
             />
           </div>
-          <table className={css.scoresHistory}>
-            <thead>
-              <tr>
-                <th>Date</th>
-                {sign === 'allScores' && <th>User</th>}
-                <th>Score</th>
-              </tr>
-            </thead>
-            <tbody>
-              {finalScores.map(({ score, date, owner }, index) => {
-                return index % 2 === 0 ? (
-                  <tr key={index}>
-                    <td className={css.pair}>{date}</td>
-                    {sign === 'allScores' && (
-                      <td className={css.pair}>{owner.name}</td>
-                    )}
-                    <td className={css.pair}>{score}</td>
-                  </tr>
-                ) : (
-                  <tr key={index}>
-                    <td className={css.odd}>{date}</td>
-                    {sign === 'allScores' && (
-                      <td className={css.odd}>{owner.name}</td>
-                    )}
-                    <td className={css.odd}>{score}</td>
-                  </tr>
-                );
-              })}
-            </tbody>
-          </table>
+          {error ? (
+            <ErrorComponent text={error} />
+          ) : (
+            <table className={css.scoresHistory}>
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  {sign === 'allScores' && <th>User</th>}
+                  <th>Score</th>
+                </tr>
+              </thead>
+              <tbody>
+                {finalScores.map(({ score, date, owner }, index) => {
+                  return index % 2 === 0 ? (
+                    <tr key={index}>
+                      <td className={css.pair}>{date}</td>
+                      {sign === 'allScores' && (
+                        <td className={css.pair}>{owner.name}</td>
+                      )}
+                      <td className={css.pair}>{score}</td>
+                    </tr>
+                  ) : (
+                    <tr key={index}>
+                      <td className={css.odd}>{date}</td>
+                      {sign === 'allScores' && (
+                        <td className={css.odd}>{owner.name}</td>
+                      )}
+                      <td className={css.odd}>{score}</td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          )}
         </div>
       )}
     </>
