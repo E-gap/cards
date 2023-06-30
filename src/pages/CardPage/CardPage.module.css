@@ -2,9 +2,13 @@
   height: 100vw;
   width: 100vw;
   background-image: url(../../images/cards-page-bg-mobile.jpg);
-  background-size: contain;
+  background-size: cover;
 
   @media screen and (min-width: 768px) {
+    background-image: url(../../images/cards-page-bg-tablet.jpg);
+  }
+
+  @media screen and (min-width: 1200px) {
     background-image: url(../../images/cards-page-bg.jpg);
   }
 }
