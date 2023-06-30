@@ -7,23 +7,25 @@ This application is made with
 
 ## **_Description application_**
 
-App link - [e-gap.github.io/cards/](e-gap.github.io/cards/)
+App link -
+[https://cards-fawn-nine.vercel.app/](https://cards-fawn-nine.vercel.app/)
 
 App is as a simple game, where user can choose cards and score points. After
 Sign In user can save his score avtomatically after each game. He can view score
 history every user ant his own history as well. User can sort score history by
 date and by user as well.
 
-App consists of two pages: [Home](https://e-gap.github.io/cards/) and
-[Cards](https://e-gap.github.io/cards/cards).
+App consists of two pages: [Home](https://cards-fawn-nine.vercel.app/) and
+[Cards](https://cards-fawn-nine.vercel.app/cards).
 
-On the page [Home](https://e-gap.github.io/cards/) we can see general decoration
-of Home page with animation. Also on Home page is button `«Go to Cards»` that we
-can click on and go to the page [Cards](https://e-gap.github.io/cards/cards).
+On the page [Home](https://cards-fawn-nine.vercel.app/) we can see general
+decoration of Home page with animation. Also on Home page is button
+`«Go to Cards»` that we can click on and go to the page
+[Cards](https://cards-fawn-nine.vercel.app/cards).
 
 ![Home page of app](./assets/home-page.jpg)
 
-Page [Cards](https://e-gap.github.io/cards/cards) looks like this:
+Page [Cards](https://cards-fawn-nine.vercel.app/cards) looks like this:
 
 ![Card page of app](./assets/card-page.jpg)
 
