@@ -1,5 +1,6 @@
 .cardPage {
   height: 100vh;
+  min-height: 480px;
   width: 100vw;
   background-image: url(../../images/cards-page-bg-mobile.jpg);
   background-size: cover;
@@ -14,7 +15,6 @@
 }
 
 .container {
-  /* height: 100vh; */
   max-width: 480px;
   margin-left: auto;
   margin-right: auto;
