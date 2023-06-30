@@ -1,10 +1,10 @@
 import { Route, Routes } from 'react-router-dom';
-import HomePage from './pages/HomePage/HomePage';
-import { RestrictedRoute } from '../src/utils/RestrictedRoute';
+import HomePage from '../pages/HomePage/HomePage';
+import { RestrictedRoute } from '../utils/RestrictedRoute';
 import { useDispatch } from 'react-redux';
-import { refresh } from '../src/redux/auth/authOperations';
+import { refresh } from '../redux/auth/authOperations';
 import { useEffect } from 'react';
-import CardPage from './pages/CardPage/CardPage';
+import CardPage from '../pages/CardPage/CardPage';
 
 function App() {
   const dispatch = useDispatch();
