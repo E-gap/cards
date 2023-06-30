@@ -12,7 +12,7 @@
   background-image: url(../../images/shirt.jpg);
   background-size: cover;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 1200px) {
     max-width: 100px;
     height: 150px;
   }
