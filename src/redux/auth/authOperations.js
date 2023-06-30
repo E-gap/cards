@@ -3,15 +3,19 @@ import axios from 'axios';
 
 // axios.defaults.baseURL = 'https://cards-backend-98c7.onrender.com/api';
 
-axios.defaults.baseURL = 'http://localhost:3001/api';
+export const instance = axios.create({
+  baseURL: process.env.REACT_APP_API_URL,
+});
+
+// axios.defaults.baseURL = 'http://localhost:3001/api';
 
 export const register = createAsyncThunk(
   'auth/register',
   async (userData, thunkApi) => {
     try {
-      const { data } = await axios.post('users/register', userData);
+      const { data } = await instance.post('users/register', userData);
       console.log(data);
-      axios.defaults.headers.common.Authorization = `Bearer ${data.token}`;
+      instance.defaults.headers.common.Authorization = `Bearer ${data.token}`;
       console.log(data);
       return data;
     } catch (error) {
@@ -24,8 +28,8 @@ export const login = createAsyncThunk(
   'auth/login',
   async (userData, thunkApi) => {
     try {
-      const { data } = await axios.post('users/login', userData);
-      axios.defaults.headers.common.Authorization = `Bearer ${data.token}`;
+      const { data } = await instance.post('users/login', userData);
+      instance.defaults.headers.common.Authorization = `Bearer ${data.token}`;
       return data;
     } catch (error) {
       return thunkApi.rejectWithValue(error.message);
@@ -35,8 +39,8 @@ export const login = createAsyncThunk(
 
 export const logout = createAsyncThunk('auth/logout', async (_, thunkApi) => {
   try {
-    await axios.post('/users/logout');
-    axios.defaults.headers.common.Authorization = ``;
+    await instance.post('/users/logout');
+    instance.defaults.headers.common.Authorization = ``;
   } catch (error) {
     return thunkApi.rejectWithValue(error.message);
   }
@@ -48,9 +52,9 @@ export const refresh = createAsyncThunk('auth/current', async (_, thunkApi) => {
     return thunkApi.rejectWithValue(
       'Sign In if you want to save your score history'
     );
-  axios.defaults.headers.common.Authorization = `Bearer ${token}`;
+  instance.defaults.headers.common.Authorization = `Bearer ${token}`;
   try {
-    const { data } = await axios.get('/users/current');
+    const { data } = await instance.get('/users/current');
     return data;
   } catch (error) {
     return thunkApi.rejectWithValue(error.message);
