@@ -42,6 +42,18 @@
   padding: 5px;
   border-radius: 20px;
   border: 2px;
+  font-size: var(--min-font-size);
+  font-weight: var(--min-font-weight);
+
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    font-size: var(--middle-font-size);
+    font-weight: var(--middle-font-weight);
+  }
+
+  @media screen and (min-width: 1200px) {
+    font-size: var(--max-font-size);
+    font-weight: var(--max-font-weight);
+  }
 }
 
 @keyframes border {

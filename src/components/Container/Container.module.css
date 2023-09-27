@@ -28,7 +28,7 @@
   @media screen and (min-width: 1200px) {
     max-width: unset;
     min-width: unset;
-    width: 1200px;
+    width: 900px;
     font-size: var(--max-font-size);
     font-weight: var(--max-font-weight);
   }
