@@ -31,11 +31,11 @@ button:focus {
 
 .sortByDate,
 .sortByScore {
-  font-size: 7px;
-  padding: 2px 2px 2px 2px;
+  font-size: var(--min-font-size);
+  padding: 2px 5px;
 
   @media screen and (min-width: 768px) {
-    font-size: var(--min-font-size);
+    font-size: var(--middle-font-size);
   }
 }
 

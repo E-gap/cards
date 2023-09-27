@@ -1,17 +1,19 @@
 .wrapperScores {
   margin-left: auto;
   margin-right: auto;
-  height: 200px;
   padding-top: 20px;
   padding-bottom: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  color: #000000;
 }
 
 .highlight {
+  font-size: var(--middle-font-size);
   text-align: center;
   text-transform: uppercase;
+  color: var(--default-color);
 }
 
 .listButtonsSort {
@@ -21,12 +23,16 @@
 
 .scoresHistory {
   display: block;
-  font-size: 12px;
+  font-size: inherit;
   margin-left: auto;
   margin-right: auto;
   overflow: hidden;
   overflow-y: scroll;
   height: 150px;
+
+  @media screen and (min-width: 768px) {
+    height: 250px;
+  }
 }
 
 .scoresHistory thead {
