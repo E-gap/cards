@@ -37,11 +37,13 @@ const CardPage = () => {
 
   const dispatch = useDispatch();
 
+  console.log(totalScore, gameOver);
+
   useEffect(() => {
     dispatch(refresh());
   }, [dispatch]);
 
-  const reloadPage = () => {
+  const restartGame = () => {
     setTotalScore(0);
     setGameOver('');
     setKey(Math.random());
@@ -67,6 +69,8 @@ const CardPage = () => {
     } else if (e.target.getAttribute('class').includes('Out')) {
       dispatch(logout());
     }
+
+    restartGame();
   };
 
   const closeModal = () => {
@@ -120,7 +124,7 @@ const CardPage = () => {
             )}
             <Button
               text="Start New Game"
-              handleButton={reloadPage}
+              handleButton={restartGame}
               view="buttonNewGame"
             />
             {isLogin ? (
