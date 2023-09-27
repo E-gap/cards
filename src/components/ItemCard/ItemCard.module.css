@@ -4,7 +4,7 @@
   max-width: 60px;
   height: 90px;
   transition: 0.1s ease-in-out;
-  background-color: lightskyblue;
+  background-color: #87cefa;
   border-radius: 10px;
   display: flex;
   justify-content: center;
@@ -20,15 +20,13 @@
 
 .rotatedItem {
   background-image: unset;
-  background-color: yellow;
+  background-color: var(--background-color-card);
   rotate: 1 2 1 360deg;
-  border: 2px solid green;
+  border: 2px solid var(--border-color-card);
 }
 
 .score {
-  color: green;
-  font-size: 25px;
-  font-weight: 700;
+  color: #008000;
   justify-content: center;
   align-items: center;
   margin-top: 0;

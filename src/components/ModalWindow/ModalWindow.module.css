@@ -33,6 +33,6 @@
 
 .closeModalIcon:hover,
 .closeModalIcon:focus {
-  color: red;
+  color: #ff0000;
   cursor: pointer;
 }

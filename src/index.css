@@ -45,3 +45,18 @@ ul {
   margin-top: 0;
   margin-bottom: 0;
 }
+
+input,
+label,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+button {
+  min-width: 50px;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: 1;
+}

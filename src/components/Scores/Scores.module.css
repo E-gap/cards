@@ -10,15 +10,8 @@
 }
 
 .highlight {
-  font-size: var(--min-font-size);
   text-align: center;
   text-transform: uppercase;
-  font-weight: 500;
-  color: var(--default-color);
-
-  @media screen and (min-width: 768px) {
-    font-size: var(--middle-font-size);
-  }
 }
 
 .listButtonsSort {
@@ -37,7 +30,7 @@
 }
 
 .scoresHistory thead {
-  background-color: aqua;
+  background-color: #00ffff;
   position: sticky;
   top: 0;
 }
@@ -45,13 +38,13 @@
 .scoresHistory td,
 .scoresHistory th,
 .scoresHistory thead {
-  border: 1px solid black;
+  border: 1px solid #000000;
 }
 
 .pair {
-  background-color: bisque;
+  background-color: #ffe4c4;
 }
 
 .odd {
-  background-color: burlywood;
+  background-color: #deb887;
 }

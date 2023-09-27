@@ -30,9 +30,6 @@
 
 .moveToCards {
   position: absolute;
-  font-size: 12px;
-
-  font-weight: 600;
   text-decoration: none;
   top: 10%;
   left: 60%;
@@ -45,18 +42,14 @@
   padding: 5px;
   border-radius: 20px;
   border: 2px;
-
-  @media screen and (min-width: 768px) {
-    font-size: 18px;
-  }
 }
 
 @keyframes border {
   0% {
-    color: yellow;
+    color: #ffff00;
   }
   100% {
-    color: lime;
+    color: #00ff00;
   }
 }
 
@@ -67,10 +60,8 @@
 
 .card {
   width: 230px;
-  color: red;
-  font-size: var(--max-font-size);
-  font-weight: 600;
-  background-color: greenyellow;
+  color: #ff0000;
+  background-color: #adff2f;
   border-radius: 10px;
   position: absolute;
   animation-name: place;
@@ -94,16 +85,16 @@
   20% {
     top: 50%;
     left: 50%;
-    box-shadow: 15px 15px 15px red, -15px 15px 15px red, -15px -15px 15px red,
-      15px -15px 15px red;
+    box-shadow: 15px 15px 15px #ff0000, -15px 15px 15px #ff0000,
+      -15px -15px 15px #ff0000, 15px -15px 15px #ff0000;
     transform: translate(-50%, -50%);
   }
 
   80% {
     top: 50%;
     left: 50%;
-    box-shadow: 15px 15px 15px red, -15px 15px 15px red, -15px -15px 15px red,
-      15px -15px 15px red;
+    box-shadow: 15px 15px 15px #ff0000, -15px 15px 15px #ff0000,
+      -15px -15px 15px #ff0000, 15px -15px 15px #ff0000;
     transform: translate(-50%, -50%);
   }
 

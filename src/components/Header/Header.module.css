@@ -10,8 +10,5 @@
 
 .userName {
   display: inline;
-  font-size: var(--middle-font-size);
-  color: var(--default-color);
-  font-weight: 700;
   margin-right: var(--default-interval);
 }

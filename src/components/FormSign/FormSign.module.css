@@ -12,13 +12,6 @@
   width: 100%;
   margin-bottom: var(--default-interval);
   position: relative;
-  font-size: 12px;
-  font-weight: 500;
-  color: var(--default-color);
-
-  @media screen and (min-width: 768px) {
-    font-size: var(--middle-font-size);
-  }
 }
 
 .submit {
@@ -43,15 +36,9 @@
 }
 
 .question {
-  font-size: var(--min-font-size);
   text-align: center;
-  color: var(--default-color);
-
-  @media screen and (min-width: 768px) {
-    font-size: var(--middle-font-size);
-  }
 }
 
 .errorValidation {
-  color: red;
+  color: var(--error-color);
 }

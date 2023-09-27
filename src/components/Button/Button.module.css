@@ -1,14 +1,9 @@
 button {
   cursor: pointer;
-  font-size: var(--min-font-size);
   border: 2px solid var(--default-color);
   background-color: var(--background-color-button);
   margin-bottom: 5px;
   border-radius: 5px;
-
-  @media screen and (min-width: 768px) {
-    font-size: var(--middle-font-size);
-  }
 }
 
 button:hover,
@@ -40,7 +35,7 @@ button:focus {
   padding: 2px 2px 2px 2px;
 
   @media screen and (min-width: 768px) {
-    font-size: 10px;
+    font-size: var(--min-font-size);
   }
 }
 
@@ -61,11 +56,9 @@ button:focus {
 }
 
 .buttonQuestionSign {
-  color: var(--default-color);
   background-color: transparent;
   border: none;
   text-decoration: underline;
-  font-weight: 700;
 }
 
 .buttonQuestionSign:hover,
