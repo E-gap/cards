@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/cards/static/css/main.4a763160.css",
-    "main.js": "/cards/static/js/main.407bcff1.js",
+    "main.css": "/cards/static/css/main.92d44179.css",
+    "main.js": "/cards/static/js/main.3c0c74c5.js",
     "static/media/Spinner-0.9s-200px.gif": "/cards/static/media/Spinner-0.9s-200px.97cc34cfc9ee0f031320.gif",
     "static/media/cards-page-bg.jpg": "/cards/static/media/cards-page-bg.cb294827b46f5be3e2e8.jpg",
     "static/media/home-page-bg.jpg": "/cards/static/media/home-page-bg.ccf40a80dcdc4358ce36.jpg",
@@ -11,11 +11,11 @@
     "static/media/shirt.jpg": "/cards/static/media/shirt.1bb7c1ac894b1ac3f663.jpg",
     "static/media/cards-blank-banner.jpg": "/cards/static/media/cards-blank-banner.ca3b7a70a073919f8c0f.jpg",
     "index.html": "/cards/index.html",
-    "main.4a763160.css.map": "/cards/static/css/main.4a763160.css.map",
-    "main.407bcff1.js.map": "/cards/static/js/main.407bcff1.js.map"
+    "main.92d44179.css.map": "/cards/static/css/main.92d44179.css.map",
+    "main.3c0c74c5.js.map": "/cards/static/js/main.3c0c74c5.js.map"
   },
   "entrypoints": [
-    "static/css/main.4a763160.css",
-    "static/js/main.407bcff1.js"
+    "static/css/main.92d44179.css",
+    "static/js/main.3c0c74c5.js"
   ]
 }
