@@ -37,8 +37,6 @@ const CardPage = () => {
 
   const dispatch = useDispatch();
 
-  console.log(totalScore, gameOver);
-
   useEffect(() => {
     dispatch(refresh());
   }, [dispatch]);
