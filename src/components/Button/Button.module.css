@@ -59,11 +59,13 @@ button:focus {
   background-color: transparent;
   border: none;
   text-decoration: underline;
+  font-weight: inherit;
+  color: #ff6347;
 }
 
 .buttonQuestionSign:hover,
 .buttonQuestionSign:focus {
-  border: none;
   background-color: transparent;
-  color: #800080;
+  border: none;
+  color: #9acd32;
 }
