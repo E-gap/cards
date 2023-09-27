@@ -65,7 +65,8 @@ const authSlice = createSlice({
       })
       .addCase(refresh.rejected, (state, action) => {
         state.isLoading = false;
-        state.error = action.payload;
+        state.error =
+          'You are not authorized, you can not save your score history';
       }),
 });
 

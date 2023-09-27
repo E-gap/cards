@@ -1,5 +1,4 @@
 .cardList {
-  width: 100%;
   max-width: 300px;
   display: flex;
   justify-content: space-between;
@@ -12,6 +11,7 @@
   margin-bottom: var(--default-interval);
 
   @media screen and (min-width: 1200px) {
-    max-width: 468px;
+    max-width: unset;
+    width: 500px;
   }
 }

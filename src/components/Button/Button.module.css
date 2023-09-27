@@ -2,7 +2,7 @@ button {
   cursor: pointer;
   font-size: var(--min-font-size);
   border: 2px solid var(--default-color);
-  background-color: aliceblue;
+  background-color: var(--background-color-button);
   margin-bottom: 5px;
   border-radius: 5px;
 
@@ -13,9 +13,9 @@ button {
 
 button:hover,
 button:focus {
-  background-color: darkgreen;
-  color: yellow;
-  border: 2px solid red;
+  background-color: #006400;
+  color: #ffff00;
+  border: 2px solid #ff0000;
   outline: none;
 }
 
@@ -51,16 +51,13 @@ button:focus {
   margin-bottom: var(--default-interval);
 }
 
-.buttonSignIn {
+.signIn,
+.signUp {
   margin-right: var(--default-interval);
 }
 
-.buttonSignUp {
-  margin-right: var(--default-interval);
-}
-
-.buttonLogOut {
-  margin-right: var(--default-interval);
+.logOut {
+  margin-right: 0px;
 }
 
 .buttonQuestionSign {
@@ -75,5 +72,5 @@ button:focus {
 .buttonQuestionSign:focus {
   border: none;
   background-color: transparent;
-  color: purple;
+  color: #800080;
 }

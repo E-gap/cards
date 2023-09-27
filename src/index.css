@@ -1,9 +1,16 @@
 :root {
   --default-interval: 10px;
-  --default-color: goldenrod;
+  --default-color: #daa520;
+  --background-color-card: #ffff00;
+  --background-color-button: #f0f8ff;
+  --border-color-card: #008000;
   --min-font-size: 10px;
   --middle-font-size: 15px;
   --max-font-size: 20px;
+  --min-font-weight: 400;
+  --middle-font-weight: 500;
+  --max-font-weight: 600;
+  --error-color: #ff0000;
 }
 
 body {

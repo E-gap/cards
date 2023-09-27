@@ -1,6 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
 import HomePage from '../pages/HomePage/HomePage';
-import { RestrictedRoute } from '../utils/RestrictedRoute';
 import { useDispatch } from 'react-redux';
 import { refresh } from '../redux/auth/authOperations';
 import { useEffect } from 'react';
@@ -18,7 +17,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/cards" element={<CardPage />} />
-        <Route path="*" element={<RestrictedRoute redirectTo="/" />} />
+        <Route path="*" element={<HomePage />} />
       </Routes>
     </>
   );

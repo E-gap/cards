@@ -35,8 +35,8 @@
     top: 79%;
     left: 33%;
     rotate: 1 2 1 180deg;
-    background-color: yellow;
-    border: 2px solid green;
+    background-color: var(--background-color-card);
+    border: 2px solid var(--border-color-card);
     background-image: url(../../images/bg30.jpg);
   }
 
@@ -54,8 +54,8 @@
     left: 75%;
     rotate: 1 2 1 180deg;
     background-image: url(../../images/bg30.jpg);
-    background-color: yellow;
-    border: 2px solid green;
+    background-color: var(--background-color-card);
+    border: 2px solid var(--border-color-card);
   }
 }
 
@@ -72,8 +72,8 @@
     top: 20%;
     left: 27%;
     rotate: 1 2 1 180deg;
-    background-color: yellow;
-    border: 2px solid green;
+    background-color: var(--background-color-card);
+    border: 2px solid var(--border-color-card);
     background-image: url(../../images/bg60.jpg);
   }
 
@@ -91,8 +91,8 @@
     left: 75%;
     rotate: 1 2 1 180deg;
     background-image: url(../../images/bg60.jpg);
-    background-color: yellow;
-    border: 2px solid green;
+    background-color: var(--background-color-card);
+    border: 2px solid var(--border-color-card);
   }
 }
 
@@ -109,8 +109,8 @@
     top: 30%;
     left: 75%;
     rotate: 1 2 1 180deg;
-    background-color: yellow;
-    border: 2px solid green;
+    background-color: var(--background-color-card);
+    border: 2px solid var(--border-color-card);
     background-image: url(../../images/bg120.jpg);
   }
 
@@ -128,7 +128,7 @@
     left: 75%;
     rotate: 1 2 1 180deg;
     background-image: url(../../images/bg120.jpg);
-    background-color: yellow;
-    border: 2px solid green;
+    background-color: var(--background-color-card);
+    border: 2px solid var(--border-color-card);
   }
 }

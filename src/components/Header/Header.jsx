@@ -28,7 +28,6 @@ const Header = ({ handleHeaderButton }) => {
               handleButton={handleHeaderButton}
               view="signIn"
             />
-
             <Button
               text="Sign Up"
               handleButton={handleHeaderButton}

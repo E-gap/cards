@@ -21,6 +21,7 @@ import {
 import FormSign from '../../components/FormSign/FormSign';
 import { Scores } from '../../components/Scores/Scores';
 import { Preloader } from '../../components/Preloader/Preloader';
+import Container from 'components/Container/Container';
 
 const CardPage = () => {
   const [key, setKey] = useState(0);
@@ -68,7 +69,7 @@ const CardPage = () => {
     }
   };
 
-  const closeModal = e => {
+  const closeModal = () => {
     setIsModalWindowOpen(false);
   };
 
@@ -89,7 +90,7 @@ const CardPage = () => {
         <Preloader />
       ) : (
         <div className={css.cardPage}>
-          <div className={css.container}>
+          <Container>
             <Header handleHeaderButton={handleHeaderButton} />
             {isModalWindowOpen ? (
               <ModalWindow
@@ -159,7 +160,7 @@ const CardPage = () => {
               </div>
             )}
             {error && <ErrorComponent text={error} />}
-          </div>
+          </Container>
         </div>
       )}
     </>
