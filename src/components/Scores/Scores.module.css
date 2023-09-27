@@ -14,6 +14,7 @@
   text-align: center;
   text-transform: uppercase;
   color: var(--default-color);
+  margin-bottom: var(--default-interval);
 }
 
 .listButtonsSort {
@@ -45,6 +46,12 @@
 .scoresHistory th,
 .scoresHistory thead {
   border: 1px solid #000000;
+}
+
+td,
+th {
+  padding: 2px 10px;
+  text-align: center;
 }
 
 .pair {

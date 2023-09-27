@@ -2,7 +2,7 @@ button {
   cursor: pointer;
   border: 2px solid var(--default-color);
   background-color: var(--background-color-button);
-  margin-bottom: 5px;
+  margin-bottom: var(--default-interval);
   border-radius: 5px;
 }
 

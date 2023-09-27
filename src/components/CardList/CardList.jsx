@@ -29,7 +29,7 @@ const CardList = ({ setGameOver, gameOver, setTotalScore, totalScore }) => {
         setGameOver('Game Over');
         const resultGame = {
           score: totalScore,
-          date: moment().format('DD.MM.YYYY hh:mm:ss'),
+          date: moment().format('lll'),
         };
         if (isLogin) {
           dispatch(addScore(resultGame));
