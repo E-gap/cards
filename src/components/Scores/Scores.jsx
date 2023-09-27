@@ -22,7 +22,7 @@ export const Scores = ({ sign, scores }) => {
   const handleButton = e => {
     if (e.target.textContent.includes('Date')) {
       setFinalScores(
-        [...finalScores].sort((a, b) => b.date.localeCompare(a.date))
+        [...finalScores].sort((a, b) => b.createdAt.localeCompare(a.createdAt))
       );
     } else {
       setFinalScores([...finalScores].sort((a, b) => b.score - a.score));

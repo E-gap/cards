@@ -47,11 +47,13 @@ ul {
 }
 
 input,
-label,
-select {
+label {
   font-family: inherit;
   font-size: inherit;
   font-weight: inherit;
+}
+
+label {
   color: inherit;
 }
 
