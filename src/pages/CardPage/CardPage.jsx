@@ -91,7 +91,7 @@ const CardPage = () => {
       {isUserLoading ? (
         <Preloader />
       ) : (
-        <div className={css.cardPage}>
+        <section className={css.cardPage}>
           <Container>
             <Header handleHeaderButton={handleHeaderButton} />
             {isModalWindowOpen ? (
@@ -163,7 +163,7 @@ const CardPage = () => {
             )}
             {error && <ErrorComponent text={error} />}
           </Container>
-        </div>
+        </section>
       )}
     </>
   );

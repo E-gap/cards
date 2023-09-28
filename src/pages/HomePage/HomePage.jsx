@@ -4,14 +4,14 @@ import { AnimationHome } from '../../components/AnimationHome/AnimationHome';
 
 const HomePage = () => {
   return (
-    <div className={css.homePage}>
+    <section className={css.homePage}>
       <div className={css.container}>
         <AnimationHome />
         <NavLink to="/cards" className={css.moveToCards}>
           Go to Cards
         </NavLink>
       </div>
-    </div>
+    </section>
   );
 };
 
